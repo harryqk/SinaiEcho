@@ -2,23 +2,22 @@
 // Created by harryqk on 7/17/22.
 //
 
-#ifndef SCPPSOCKET_SCPPSOCKETFACTORYMAC_H
-#define SCPPSOCKET_SCPPSOCKETFACTORYMAC_H
+#ifndef SINAIECHO_SCPPSOCKETFACTORYMAC_H
+#define SINAIECHO_SCPPSOCKETFACTORYMAC_H
 #include "../SCPPSocketFactory.h"
-namespace scppsocket
+namespace SinaiEcho
 {
     class SCPPSocketFactoryMac : public SCPPSocketFactory{
     public:
         SCPPSocketFactoryMac();
         virtual ~SCPPSocketFactoryMac() override;
-        virtual SCPPSocket* CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) override;
+        virtual Socket* CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) override;
+        virtual Socket * CreateConnectionSocket(int Fd) override;
         virtual sockaddr_in CreateAddress(const char* Address, int Port) override;
-        virtual NetManagerWorker* CreateTCPServerNetMangerWorker(SCPPSocket* Local) override;
-        virtual NetManagerWorker* CreateTCPClientNetMangerWorker(SCPPSocket* Local) override;
     };
 
 }
 
 
 
-#endif //SCPPSOCKET_SCPPSOCKETFACTORYMAC_H
+#endif //SINAIECHO_SCPPSOCKETFACTORYMAC_H

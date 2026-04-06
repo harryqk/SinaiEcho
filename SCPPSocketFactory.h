@@ -2,25 +2,24 @@
 // Created by harryqk on 7/17/22.
 //
 
-#ifndef SCPPSOCKET_SCPPSOCKETFACTORY_H
-#define SCPPSOCKET_SCPPSOCKETFACTORY_H
-//#include "SCPPSocket.h"
+#ifndef SINAIECHO_SCPPSOCKETFACTORY_H
+#define SINAIECHO_SCPPSOCKETFACTORY_H
+//#include "Socket.h"
 #include "NetManagerWorker.h"
 #include <list>
-namespace scppsocket
+namespace SinaiEcho
 {
     class SCPPSocketFactory {
     public:
         SCPPSocketFactory();
         virtual ~SCPPSocketFactory();
-        virtual SCPPSocket* CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) = 0;
+        virtual Socket* CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) = 0;
+        virtual Socket* CreateConnectionSocket(int Fd) = 0;
         virtual sockaddr_in CreateAddress(const char* Address, int Port) = 0;
-        virtual NetManagerWorker* CreateTCPServerNetMangerWorker(SCPPSocket* Local) = 0;
-        virtual NetManagerWorker* CreateTCPClientNetMangerWorker(SCPPSocket* Local) = 0;
     };
 }
 
 
 
 
-#endif //SCPPSOCKET_SCPPSOCKETFACTORY_H
+#endif //SINAIECHO_SCPPSOCKETFACTORY_H

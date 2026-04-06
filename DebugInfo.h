@@ -2,8 +2,8 @@
 // Created by harryqk on 8/7/22.
 //
 
-#ifndef SCPPSOCKET_DEBUGINFO_H
-#define SCPPSOCKET_DEBUGINFO_H
+#ifndef SINAIECHO_DEBUGINFO_H
+#define SINAIECHO_DEBUGINFO_H
 #define ERR_NO_ERROR    0   /* No error */
 #define ERR_OPEN_FILE   1   /* Open file error */
 #define ERR_SEND_MESG   2   /* sending a message error */
@@ -33,6 +33,6 @@ char* errmsg[] = {
 
 
 long errno = 0;
-#endif SCPPSOCKET_DEBUGINFO_H
+#endif SINAIECHO_DEBUGINFO_H
 
 

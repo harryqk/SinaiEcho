@@ -2,11 +2,11 @@
 // Created by harryqk on 8/8/22.
 //
 
-#ifndef SCPPSOCKET_NETMANAGERWORKERSERVER_H
-#define SCPPSOCKET_NETMANAGERWORKERSERVER_H
+#ifndef SINAIECHO_NETMANAGERWORKERSERVER_H
+#define SINAIECHO_NETMANAGERWORKERSERVER_H
 #include "NetManagerWorker.h"
 #include <list>
-namespace scppsocket
+namespace SinaiEcho
 {
     class NetManagerWorkerServer:public NetManagerWorker
     {
@@ -27,11 +27,11 @@ namespace scppsocket
 
 
         std::list<Connection*> ConnectionsToClient;
-        SCPPSocket* Local;
+        Socket* Local;
     public:
-        SCPPSocket *GetLocal() const;
+        Socket *GetLocal() const;
 
-        void SetLocal(SCPPSocket *local);
+        void SetLocal(Socket *local);
 
     protected:
         int MaxConnection;
@@ -48,4 +48,4 @@ namespace scppsocket
 
 
 
-#endif //SCPPSOCKET_NETMANAGERWORKERSERVER_H
+#endif //SINAIECHO_NETMANAGERWORKERSERVER_H

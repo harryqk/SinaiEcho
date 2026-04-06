@@ -3,7 +3,7 @@
 //
 
 #include "SCPPSocketFactory.h"
-namespace scppsocket
+namespace SinaiEcho
 {
     SCPPSocketFactory::SCPPSocketFactory()
     {

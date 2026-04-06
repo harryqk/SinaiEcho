@@ -1,4 +1,4 @@
-# Install script for directory: /Volumes/Mac/Develop/ClionProject/SCPPSocket
+# Install script for directory: /Volumes/Mac/Develop/ClionProject/SinaiEcho
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

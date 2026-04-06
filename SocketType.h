@@ -2,9 +2,9 @@
 // Created by harryqk on 7/17/22.
 //
 
-#ifndef SCPPSOCKET_SOCKETTYPE_H
-#define SCPPSOCKET_SOCKETTYPE_H
-namespace scppsocket
+#ifndef SINAIECHO_SOCKETTYPE_H
+#define SINAIECHO_SOCKETTYPE_H
+namespace SinaiEcho
 {
     /** Indicates the socket protocol of socket being used, typically for BSD Sockets */
     enum class SocketAddressFamily : int
@@ -50,4 +50,4 @@ namespace scppsocket
         NonBlock
     };
 }
-#endif //SCPPSOCKET_SOCKETTYPE_H
+#endif //SINAIECHO_SOCKETTYPE_H

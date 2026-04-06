@@ -1,3 +1,7 @@
-/Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug/CMakeFiles/SCPPSocket.dir
-/Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/SCPPSocketMac.dir
+/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/Poller.dir
+/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/Wakeup.dir
+/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/Server.dir
+/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/Client.dir
+/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/rebuild_cache.dir

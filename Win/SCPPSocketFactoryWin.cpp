@@ -3,12 +3,11 @@
 //
 
 #include "SCPPSocketFactoryWin.h"
-#include "SCPPSocketWin.h"
+#include "SocketWin.h"
 
-#include "TCPClientNetManagerWorkerWin.h"
-#include "TCPServerNetManagerWorkerWin.h"
 
-namespace scppsocket
+
+namespace SinaiEcho
 {
     SCPPSocketFactoryWin::SCPPSocketFactoryWin()
     {
@@ -20,10 +19,10 @@ namespace scppsocket
         std::printf("destruct SCPPSocketFactoryWin\n");
     }
 
-    SCPPSocket* SCPPSocketFactoryWin::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
+    Socket* SCPPSocketFactoryWin::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
     {
-        SCPPSocketWin* SocketWin = new SCPPSocketWin(AddressFamily, Type, Protocol);
-        return SocketWin;
+        SocketWin* Win = new SocketWin(AddressFamily, Type, Protocol);
+        return Win;
 
     }
 
@@ -36,19 +35,5 @@ namespace scppsocket
         return server_addr;
     }
 
-    NetManagerWorker *SCPPSocketFactoryWin::CreateTCPClientNetMangerWorker(SCPPSocket *Local)
-    {
-        TCPClientNetManagerWorkerWin* Win = new TCPClientNetManagerWorkerWin();
-        Win->Local = Local;
-        //Mac->ConnectionToServer = ConnectionToServer;
-        return Win;
-    }
-
-    NetManagerWorker *SCPPSocketFactoryWin::CreateTCPServerNetMangerWorker(SCPPSocket *Local)
-    {
-        TCPServerNetManagerWorkerWin* Win = new TCPServerNetManagerWorkerWin();
-        Win->SetLocal(Local);
-        return Win;
-    }
 
 }

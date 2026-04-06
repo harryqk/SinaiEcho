@@ -2,10 +2,10 @@
 // Created by harryqk on 8/8/22.
 //
 
-#ifndef SCPPSOCKET_NETMANAGERWORKERCLIENT_H
-#define SCPPSOCKET_NETMANAGERWORKERCLIENT_H
+#ifndef SINAIECHO_NETMANAGERWORKERCLIENT_H
+#define SINAIECHO_NETMANAGERWORKERCLIENT_H
 #include "NetManagerWorker.h"
-namespace scppsocket
+namespace SinaiEcho
 {
     class NetManagerWorkerClient:public NetManagerWorker
     {
@@ -26,7 +26,7 @@ namespace scppsocket
         char* ReadBuf;
     public:
         Connection *ConnectionToServer;
-        SCPPSocket* Local;
+        Socket* Local;
         virtual void DoWork() override;
         virtual void SendMessage(const char *Msg, int Len) = 0;
         virtual void StopWork() override;
@@ -35,4 +35,4 @@ namespace scppsocket
 
 
 
-#endif //SCPPSOCKET_NETMANAGERWORKERCLIENT_H
+#endif //SINAIECHO_NETMANAGERWORKERCLIENT_H

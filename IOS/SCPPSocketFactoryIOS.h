@@ -2,8 +2,8 @@
 // Created by harryqk on 7/17/22.
 //
 
-#ifndef SCPPSOCKET_SCPPSOCKETFACTORYIOS_H
-#define SCPPSOCKET_SCPPSOCKETFACTORYIOS_H
+#ifndef SINAIECHO_SCPPSOCKETFACTORYIOS_H
+#define SINAIECHO_SCPPSOCKETFACTORYIOS_H
 #include "../SCPPSocketFactory.h"
 namespace scppsocket
 {
@@ -21,4 +21,4 @@ namespace scppsocket
 
 
 
-#endif //SCPPSOCKET_SCPPSOCKETFACTORYIOS_H
+#endif //SINAIECHO_SCPPSOCKETFACTORYIOS_H

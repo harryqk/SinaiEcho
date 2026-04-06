@@ -3,7 +3,7 @@
 //
 
 #include "NetManagerWorkerServer.h"
-namespace scppsocket
+namespace SinaiEcho
 {
 
     NetManagerWorkerServer::NetManagerWorkerServer()
@@ -48,12 +48,12 @@ namespace scppsocket
         OnServerMessageRead = Delegate;
     }
 
-    SCPPSocket *NetManagerWorkerServer::GetLocal() const
+    Socket *NetManagerWorkerServer::GetLocal() const
     {
         return Local;
     }
 
-    void NetManagerWorkerServer::SetLocal(SCPPSocket *local)
+    void NetManagerWorkerServer::SetLocal(Socket *local)
     {
         Local = local;
     }

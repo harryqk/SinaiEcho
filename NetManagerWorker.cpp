@@ -4,7 +4,7 @@
 
 #include "NetManagerWorker.h"
 
-namespace scppsocket
+namespace SinaiEcho
 {
 
     bool NetManagerWorker::GetIsWorking() const

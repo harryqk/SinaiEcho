@@ -2,8 +2,8 @@
 // Created by harryqk on 8/7/22.
 //
 
-#ifndef SCPPSOCKET_SCPPSOCKETDELEGATE_H
-#define SCPPSOCKET_SCPPSOCKETDELEGATE_H
+#ifndef SINAIECHO_SCPPSOCKETDELEGATE_H
+#define SINAIECHO_SCPPSOCKETDELEGATE_H
 //client
 typedef void (*OnClientMessageReadDelegate)(const char* Message, int Len);
 typedef void (*OnConnectDelegate)(bool Value);
@@ -16,4 +16,4 @@ typedef void (*OnServerMessageReadDelegate)(int FileDescriptor, const char* Mess
 //both
 typedef void (*OnNetworkDisconnectDelegate)(const char* Error);
 typedef void (*OnDebugPrintDelegate)(const char* Info);
-#endif //SCPPSOCKET_SCPPSOCKETDELEGATE_H
+#endif //SINAIECHO_SCPPSOCKETDELEGATE_H

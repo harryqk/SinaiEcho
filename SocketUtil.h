@@ -2,10 +2,10 @@
 // Created by harryqk on 7/22/22.
 //
 
-#ifndef SCPPSOCKET_SOCKETUTIL_H
-#define SCPPSOCKET_SOCKETUTIL_H
+#ifndef SINAIECHO_SOCKETUTIL_H
+#define SINAIECHO_SOCKETUTIL_H
 #define byte unsigned char
-namespace scppsocket
+namespace SinaiEcho
 {
     class SocketUtil
     {
@@ -18,4 +18,4 @@ namespace scppsocket
 
 
 
-#endif //SCPPSOCKET_SOCKETUTIL_H
+#endif //SINAIECHO_SOCKETUTIL_H

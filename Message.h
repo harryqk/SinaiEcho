@@ -2,10 +2,10 @@
 // Created by harryqk on 7/19/22.
 //
 
-#ifndef SCPPSOCKET_MESSAGE_H
-#define SCPPSOCKET_MESSAGE_H
+#ifndef SINAIECHO_MESSAGE_H
+#define SINAIECHO_MESSAGE_H
 
-namespace scppsocket
+namespace SinaiEcho
 {
     class Message {
     public:
@@ -20,4 +20,4 @@ namespace scppsocket
 
 
 
-#endif //SCPPSOCKET_MESSAGE_H
+#endif //SINAIECHO_MESSAGE_H

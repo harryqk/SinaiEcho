@@ -4,7 +4,7 @@
 
 #include "TCPConnection.h"
 
-namespace scppsocket
+namespace SinaiEcho
 {
     SockSSize_t TCPConnection::Send(const char *buf, SockSize_t Len)
     {
@@ -123,7 +123,7 @@ namespace scppsocket
         return Msg;
     }
 
-    TCPConnection::TCPConnection(SCPPSocket* sSock): Connection(sSock)
+    TCPConnection::TCPConnection(Socket* sSock): Connection(sSock)
     {
         std::printf("construct TCPConnection\n");
     }

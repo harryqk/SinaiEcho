@@ -3,7 +3,7 @@
 //
 
 #include "SCPPSocketFactoryIOS.h"
-#include "SCPPSocketIOS.h"
+#include "SocketIOS.h"
 #include "TCPClientNetManagerWorkerIOS.h"
 #include "TCPServerNetManagerWorkerIOS.h"
 #include <iostream>
@@ -11,7 +11,7 @@ namespace scppsocket
 {
     SCPPSocket* SCPPSocketFactoryIOS::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
     {
-        SCPPSocketIOS* SocketIOS = new SCPPSocketIOS(AddressFamily, Type, Protocol);
+        SocketIOS* SocketIOS = new SocketIOS(AddressFamily, Type, Protocol);
         return SocketIOS;
     }
 

@@ -2,11 +2,11 @@
 // Created by harryqk on 7/21/22.
 //
 
-#ifndef SCPPSOCKET_NETMANAGERWORKER_H
-#define SCPPSOCKET_NETMANAGERWORKER_H
+#ifndef SINAIECHO_NETMANAGERWORKER_H
+#define SINAIECHO_NETMANAGERWORKER_H
 #include "Connection.h"
 #include "SCPPSocketDelegate.h"
-namespace scppsocket
+namespace SinaiEcho
 {
     class NetManagerWorker
     {
@@ -31,4 +31,4 @@ namespace scppsocket
 }
 
 
-#endif //SCPPSOCKET_NETMANAGERWORKER_H
+#endif //SINAIECHO_NETMANAGERWORKER_H

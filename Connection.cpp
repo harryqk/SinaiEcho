@@ -3,15 +3,15 @@
 //
 
 #include "Connection.h"
-namespace scppsocket
+namespace SinaiEcho
 {
 
-    SCPPSocket *Connection::GetSSock() const
+    Socket *Connection::GetSSock() const
     {
         return SSock;
     }
 
-    Connection::Connection(SCPPSocket* sSock)
+    Connection::Connection(Socket* sSock)
     {
         SSock = sSock;
         std::printf("construct Connection\n");

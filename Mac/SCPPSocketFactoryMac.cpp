@@ -3,16 +3,14 @@
 //
 
 #include "SCPPSocketFactoryMac.h"
-#include "SCPPSocketMac.h"
-#include "TCPClientNetManagerWorkerMac.h"
-#include "TCPServerNetManagerWorkerMac.h"
+#include "SocketMac.h"
 #include <iostream>
-namespace scppsocket
+namespace SinaiEcho
 {
-    SCPPSocket* SCPPSocketFactoryMac::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
+    Socket* SCPPSocketFactoryMac::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
     {
-        SCPPSocketMac* SocketMac = new SCPPSocketMac(AddressFamily, Type, Protocol);
-        return SocketMac;
+        SocketMac* Mac = new SocketMac(AddressFamily, Type, Protocol);
+        return Mac;
     }
 
     sockaddr_in SCPPSocketFactoryMac::CreateAddress(const char *Address, int Port)
@@ -25,19 +23,12 @@ namespace scppsocket
         return server_addr;
     }
 
-    NetManagerWorker *SCPPSocketFactoryMac::CreateTCPClientNetMangerWorker(SCPPSocket* Local)
-    {
-        TCPClientNetManagerWorkerMac* Mac = new TCPClientNetManagerWorkerMac();
-        Mac->Local = Local;
-        //Mac->ConnectionToServer = ConnectionToServer;
-        return Mac;
-    }
 
-    NetManagerWorker *SCPPSocketFactoryMac::CreateTCPServerNetMangerWorker(SCPPSocket* Local)
+    Socket* SCPPSocketFactoryMac::CreateConnectionSocket(int Fd)
     {
-        TCPServerNetManagerWorkerMac* Mac = new TCPServerNetManagerWorkerMac();
-        Mac->SetLocal(Local);
-        return Mac;
+        SocketMac* Sock = new SocketMac();
+        Sock->SetFileDescriptor(Fd);
+        return Sock;
     }
 
     SCPPSocketFactoryMac::SCPPSocketFactoryMac()
@@ -49,6 +40,8 @@ namespace scppsocket
     {
         std::printf("destruct SCPPSocketFactoryMac\n");
     }
+
+
 
 
 }

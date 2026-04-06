@@ -3,7 +3,7 @@
 //
 
 #include "SCPPSocketFactoryLinux.h"
-#include "SCPPSocketLinux.h"
+#include "SocketLinux.h"
 #include "TCPClientNetManagerWorkerLinux.h"
 #include "TCPServerNetManagerWorkerLinux.h"
 #include <iostream>
@@ -11,7 +11,7 @@ namespace scppsocket
 {
     SCPPSocket* SCPPSocketFactoryLinux::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
     {
-        SCPPSocketLinux* SocketLinux = new SCPPSocketLinux(AddressFamily, Type, Protocol);
+        SocketLinux* SocketLinux = new SocketLinux(AddressFamily, Type, Protocol);
         return SocketLinux;
     }
 

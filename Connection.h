@@ -2,22 +2,22 @@
 // Created by harryqk on 7/17/22.
 //
 
-#ifndef SCPPSOCKET_CONNECTION_H
-#define SCPPSOCKET_CONNECTION_H
-#include "SCPPSocket.h"
+#ifndef SINAIECHO_CONNECTION_H
+#define SINAIECHO_CONNECTION_H
+#include "Socket.h"
 #include "Message.h"
 #include <queue>
 #include <mutex>
-namespace scppsocket
+namespace SinaiEcho
 {
     class Connection {
     protected:
-        SCPPSocket* SSock;
+        Socket* SSock;
     public:
-        SCPPSocket *GetSSock() const;
+        Socket *GetSSock() const;
 
     public:
-        explicit Connection(SCPPSocket* sSock);
+        explicit Connection(Socket* sSock);
         virtual ~Connection();
 
     protected:
@@ -38,4 +38,4 @@ namespace scppsocket
 }
 
 
-#endif //SCPPSOCKET_CONNECTION_H
+#endif //SINAIECHO_CONNECTION_H

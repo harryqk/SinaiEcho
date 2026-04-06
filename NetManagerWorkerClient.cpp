@@ -3,7 +3,7 @@
 //
 
 #include "NetManagerWorkerClient.h"
-namespace scppsocket
+namespace SinaiEcho
 {
 
     void NetManagerWorkerClient::SetOnClientMessageReadDelegate(OnClientMessageReadDelegate Delegate)

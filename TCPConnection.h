@@ -2,15 +2,15 @@
 // Created by harryqk on 7/21/22.
 //
 
-#ifndef SCPPSOCKET_TCPCONNECTION_H
-#define SCPPSOCKET_TCPCONNECTION_H
+#ifndef SINAIECHO_TCPCONNECTION_H
+#define SINAIECHO_TCPCONNECTION_H
 #include "Connection.h"
-namespace scppsocket
+namespace SinaiEcho
 {
     class TCPConnection: public Connection
     {
         public:
-        explicit TCPConnection(SCPPSocket* sSock);
+        explicit TCPConnection(Socket* sSock);
         virtual ~TCPConnection() override;
         virtual SockSSize_t Send(const char*buf, SockSize_t Len) override;
         //game tcp do not need but stream media udp may need
@@ -26,4 +26,4 @@ namespace scppsocket
 
 
 
-#endif //SCPPSOCKET_TCPCONNECTION_H
+#endif //SINAIECHO_TCPCONNECTION_H

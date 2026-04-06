@@ -2,9 +2,9 @@
 // Created by harryqk on 7/17/22.
 //
 
-#ifndef SCPPSOCKET_SCPPSOCKETANDROID_H
-#define SCPPSOCKET_SCPPSOCKETANDROID_H
-#include "../SCPPSocket.h"
+#ifndef SINAIECHO_SCPPSOCKETANDROID_H
+#define SINAIECHO_SCPPSOCKETANDROID_H
+#include "../Socket.h"
 namespace scppsocket
 {
     class SCPPSocketAndroid :public SCPPSocket
@@ -30,4 +30,4 @@ namespace scppsocket
 }
 
 
-#endif //SCPPSOCKET_SCPPSOCKETANDROID_H
+#endif //SINAIECHO_SCPPSOCKETANDROID_H

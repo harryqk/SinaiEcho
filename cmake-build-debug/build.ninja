@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: SCPPSocket
+# Project: SinaiEcho
 # Configurations: Debug
 # =============================================================================
 
@@ -39,48 +39,287 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug/
+cmake_ninja_workdir = /Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/
 # =============================================================================
-# Object build statements for STATIC_LIBRARY target SCPPSocket
+# Object build statements for STATIC_LIBRARY target SCPPSocketMac
 
 
 #############################################
-# Order-only phony target for SCPPSocket
+# Order-only phony target for SCPPSocketMac
 
-build cmake_object_order_depends_target_SCPPSocket: phony || CMakeFiles/SCPPSocket.dir
+build cmake_object_order_depends_target_SCPPSocketMac: phony || CMakeFiles/SCPPSocketMac.dir
 
-build CMakeFiles/SCPPSocket.dir/library.cpp.o: CXX_COMPILER__SCPPSocket_Debug /Volumes/Mac/Develop/ClionProject/SCPPSocket/library.cpp || cmake_object_order_depends_target_SCPPSocket
-  DEP_FILE = CMakeFiles/SCPPSocket.dir/library.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/SCPPSocket.dir
-  OBJECT_FILE_DIR = CMakeFiles/SCPPSocket.dir
-  TARGET_COMPILE_PDB = CMakeFiles/SCPPSocket.dir/SCPPSocket.pdb
-  TARGET_PDB = libSCPPSocket.pdb
+build CMakeFiles/SCPPSocketMac.dir/Channel.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Channel.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/Channel.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/Connection.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Connection.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/Connection.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/EventLoop.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/EventLoop.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/EventLoop.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/Lib4Unity.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Lib4Unity.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/Lib4Unity.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/Message.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Message.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/Message.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/NetConnection.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetConnection.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetConnection.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/NetManager.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetManager.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetManager.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/NetManagerWorker.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetManagerWorker.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetManagerWorker.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerClient.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetManagerWorkerClient.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerClient.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerServer.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetManagerWorkerServer.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerServer.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/SCPPSocketFactory.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/SCPPSocketFactory.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/SCPPSocketFactory.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/Socket.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Socket.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/Socket.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/SocketUtil.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/SocketUtil.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/SocketUtil.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/TCPClient.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/TCPClient.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/TCPClient.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/TCPConnection.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/TCPConnection.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/TCPConnection.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/TCPServer.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/TCPServer.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/TCPServer.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
+
+build CMakeFiles/SCPPSocketMac.dir/Mac/SCPPSocketFactoryMac.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Mac/SCPPSocketFactoryMac.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/Mac/SCPPSocketFactoryMac.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir/Mac
+
+build CMakeFiles/SCPPSocketMac.dir/Mac/SocketMac.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Mac/SocketMac.cpp || cmake_object_order_depends_target_SCPPSocketMac
+  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/Mac/SocketMac.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
+  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir/Mac
 
 
 # =============================================================================
-# Link build statements for STATIC_LIBRARY target SCPPSocket
+# Link build statements for STATIC_LIBRARY target SCPPSocketMac
 
 
 #############################################
-# Link the static library libSCPPSocket.a
+# Link the static library ../lib/libSCPPSocketMac.a
 
-build libSCPPSocket.a: CXX_STATIC_LIBRARY_LINKER__SCPPSocket_Debug CMakeFiles/SCPPSocket.dir/library.cpp.o
-  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles/SCPPSocket.dir
+build ../lib/libSCPPSocketMac.a: CXX_STATIC_LIBRARY_LINKER__SCPPSocketMac_Debug CMakeFiles/SCPPSocketMac.dir/Channel.cpp.o CMakeFiles/SCPPSocketMac.dir/Connection.cpp.o CMakeFiles/SCPPSocketMac.dir/EventLoop.cpp.o CMakeFiles/SCPPSocketMac.dir/Lib4Unity.cpp.o CMakeFiles/SCPPSocketMac.dir/Message.cpp.o CMakeFiles/SCPPSocketMac.dir/NetConnection.cpp.o CMakeFiles/SCPPSocketMac.dir/NetManager.cpp.o CMakeFiles/SCPPSocketMac.dir/NetManagerWorker.cpp.o CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerClient.cpp.o CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerServer.cpp.o CMakeFiles/SCPPSocketMac.dir/SCPPSocketFactory.cpp.o CMakeFiles/SCPPSocketMac.dir/Socket.cpp.o CMakeFiles/SCPPSocketMac.dir/SocketUtil.cpp.o CMakeFiles/SCPPSocketMac.dir/TCPClient.cpp.o CMakeFiles/SCPPSocketMac.dir/TCPConnection.cpp.o CMakeFiles/SCPPSocketMac.dir/TCPServer.cpp.o CMakeFiles/SCPPSocketMac.dir/Mac/SCPPSocketFactoryMac.cpp.o CMakeFiles/SCPPSocketMac.dir/Mac/SocketMac.cpp.o
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -fms-extensions -g
+  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/SCPPSocket.dir/SCPPSocket.pdb
-  TARGET_FILE = libSCPPSocket.a
-  TARGET_PDB = libSCPPSocket.pdb
+  TARGET_FILE = ../lib/libSCPPSocketMac.a
+  TARGET_PDB = SCPPSocketMac.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Poller
+
+
+#############################################
+# Order-only phony target for Poller
+
+build cmake_object_order_depends_target_Poller: phony || CMakeFiles/Poller.dir
+
+build CMakeFiles/Poller.dir/Poller/Poller.cpp.o: CXX_COMPILER__Poller_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Poller/Poller.cpp || cmake_object_order_depends_target_Poller
+  DEP_FILE = CMakeFiles/Poller.dir/Poller/Poller.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Poller.dir
+  OBJECT_FILE_DIR = CMakeFiles/Poller.dir/Poller
+
+build CMakeFiles/Poller.dir/Poller/KqueuePoller.cpp.o: CXX_COMPILER__Poller_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Poller/KqueuePoller.cpp || cmake_object_order_depends_target_Poller
+  DEP_FILE = CMakeFiles/Poller.dir/Poller/KqueuePoller.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Poller.dir
+  OBJECT_FILE_DIR = CMakeFiles/Poller.dir/Poller
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Poller
+
+
+#############################################
+# Link the static library ../lib/libPoller.a
+
+build ../lib/libPoller.a: CXX_STATIC_LIBRARY_LINKER__Poller_Debug CMakeFiles/Poller.dir/Poller/Poller.cpp.o CMakeFiles/Poller.dir/Poller/KqueuePoller.cpp.o
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -fms-extensions -g
+  OBJECT_DIR = CMakeFiles/Poller.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ../lib/libPoller.a
+  TARGET_PDB = Poller.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Wakeup
+
+
+#############################################
+# Order-only phony target for Wakeup
+
+build cmake_object_order_depends_target_Wakeup: phony || CMakeFiles/Wakeup.dir
+
+build CMakeFiles/Wakeup.dir/Wakeup/Wakeup.cpp.o: CXX_COMPILER__Wakeup_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Wakeup/Wakeup.cpp || cmake_object_order_depends_target_Wakeup
+  DEP_FILE = CMakeFiles/Wakeup.dir/Wakeup/Wakeup.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Wakeup.dir
+  OBJECT_FILE_DIR = CMakeFiles/Wakeup.dir/Wakeup
+
+build CMakeFiles/Wakeup.dir/Wakeup/PipeWakeup.cpp.o: CXX_COMPILER__Wakeup_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Wakeup/PipeWakeup.cpp || cmake_object_order_depends_target_Wakeup
+  DEP_FILE = CMakeFiles/Wakeup.dir/Wakeup/PipeWakeup.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Wakeup.dir
+  OBJECT_FILE_DIR = CMakeFiles/Wakeup.dir/Wakeup
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Wakeup
+
+
+#############################################
+# Link the static library ../lib/libWakeup.a
+
+build ../lib/libWakeup.a: CXX_STATIC_LIBRARY_LINKER__Wakeup_Debug CMakeFiles/Wakeup.dir/Wakeup/Wakeup.cpp.o CMakeFiles/Wakeup.dir/Wakeup/PipeWakeup.cpp.o
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -fms-extensions -g
+  OBJECT_DIR = CMakeFiles/Wakeup.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ../lib/libWakeup.a
+  TARGET_PDB = Wakeup.a.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Server
+
+
+#############################################
+# Order-only phony target for Server
+
+build cmake_object_order_depends_target_Server: phony || cmake_object_order_depends_target_Poller cmake_object_order_depends_target_SCPPSocketMac cmake_object_order_depends_target_Wakeup
+
+build CMakeFiles/Server.dir/Test/Main.cpp.o: CXX_COMPILER__Server_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Test/Main.cpp || cmake_object_order_depends_target_Server
+  DEP_FILE = CMakeFiles/Server.dir/Test/Main.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Server.dir
+  OBJECT_FILE_DIR = CMakeFiles/Server.dir/Test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Server
+
+
+#############################################
+# Link the executable Server
+
+build Server: CXX_EXECUTABLE_LINKER__Server_Debug CMakeFiles/Server.dir/Test/Main.cpp.o | ../lib/libSCPPSocketMac.a ../lib/libPoller.a ../lib/libWakeup.a || ../lib/libPoller.a ../lib/libSCPPSocketMac.a ../lib/libWakeup.a
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = ../lib/libSCPPSocketMac.a  ../lib/libPoller.a  ../lib/libWakeup.a
+  OBJECT_DIR = CMakeFiles/Server.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Server
+  TARGET_PDB = Server.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Client
+
+
+#############################################
+# Order-only phony target for Client
+
+build cmake_object_order_depends_target_Client: phony || cmake_object_order_depends_target_Poller cmake_object_order_depends_target_SCPPSocketMac cmake_object_order_depends_target_Wakeup
+
+build CMakeFiles/Client.dir/Test/Client.cpp.o: CXX_COMPILER__Client_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Test/Client.cpp || cmake_object_order_depends_target_Client
+  DEP_FILE = CMakeFiles/Client.dir/Test/Client.cpp.o.d
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Client.dir
+  OBJECT_FILE_DIR = CMakeFiles/Client.dir/Test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Client
+
+
+#############################################
+# Link the executable Client
+
+build Client: CXX_EXECUTABLE_LINKER__Client_Debug CMakeFiles/Client.dir/Test/Client.cpp.o | ../lib/libSCPPSocketMac.a ../lib/libPoller.a ../lib/libWakeup.a || ../lib/libPoller.a ../lib/libSCPPSocketMac.a ../lib/libWakeup.a
+  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = ../lib/libSCPPSocketMac.a  ../lib/libPoller.a  ../lib/libWakeup.a
+  OBJECT_DIR = CMakeFiles/Client.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Client
+  TARGET_PDB = Client.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -91,7 +330,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Volumes/Mac/Develop/ClionProject/SCPPSocket -B/Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug
+  COMMAND = cd /Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Volumes/Mac/Develop/ClionProject/SinaiEcho -B/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -101,7 +340,17 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build SCPPSocket: phony libSCPPSocket.a
+build Poller: phony ../lib/libPoller.a
+
+build SCPPSocketMac: phony ../lib/libSCPPSocketMac.a
+
+build Wakeup: phony ../lib/libWakeup.a
+
+build libPoller.a: phony ../lib/libPoller.a
+
+build libSCPPSocketMac.a: phony ../lib/libSCPPSocketMac.a
+
+build libWakeup.a: phony ../lib/libWakeup.a
 
 # =============================================================================
 # Folder targets.
@@ -109,9 +358,9 @@ build SCPPSocket: phony libSCPPSocket.a
 # =============================================================================
 
 #############################################
-# Folder: /Volumes/Mac/Develop/ClionProject/SCPPSocket/cmake-build-debug
+# Folder: /Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug
 
-build all: phony libSCPPSocket.a
+build all: phony ../lib/libSCPPSocketMac.a ../lib/libPoller.a ../lib/libWakeup.a Server Client
 
 # =============================================================================
 # Built-in targets
@@ -120,14 +369,14 @@ build all: phony libSCPPSocket.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
 
 
 #############################################

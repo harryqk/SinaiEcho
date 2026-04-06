@@ -3,7 +3,7 @@
 //
 
 #include "Message.h"
-namespace scppsocket
+namespace SinaiEcho
 {
     Message::Message(char* Data, int Len)
     {

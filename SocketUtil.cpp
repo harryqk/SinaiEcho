@@ -5,7 +5,7 @@
 #include "SocketUtil.h"
 #include <iostream>
 #include <cstring>
-namespace scppsocket
+namespace SinaiEcho
 {
 
     void SocketUtil::IntToByte(int i, unsigned char *bytes, int size)
