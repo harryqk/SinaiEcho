@@ -45,13 +45,13 @@ namespace SinaiEcho
         // 设置关闭回调（给上层用，比如移除连接）
         void SetCloseCallback(EventCallBack cb)
         {
-            closeCallback_ = cb;
+            CloseCallback_ = cb;
         }
 
         // 设置连接成功回调（给上层用，比如客户端提示）
         void SetConnectedCallback(EventCallBack cb)
         {
-            connectedCallback = cb;
+            ConnectedCallback = cb;
         }
         void SetState(State st);
         Channel* GetChannel();
@@ -64,20 +64,20 @@ namespace SinaiEcho
 
 
     private:
-        EventLoop* loop_;
+        EventLoop* Loop;
         int fd_;
 
-        Channel* channel_;
+        Channel* channel;
 
-        std::string writeBuffer_;
+        std::string WriteBuffer_;
 
-        EventCallBack closeCallback_;
-        EventCallBack connectedCallback;
+        EventCallBack CloseCallback_;
+        EventCallBack ConnectedCallback;
         std::unique_ptr<Socket> SSock;
         State state = kDisconnected;
         std::string InputBuffer;
         std::string OutputBuffer;
-        int readIndex = 0;
+        int ReadIndex = 0;
     };
 }
 #endif //SINAIECHO_NETCONNECTION_H

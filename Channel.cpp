@@ -7,7 +7,7 @@
 namespace SinaiEcho
 {
     Channel::Channel(EventLoop* loop, int fd)
-            : loop(loop), fd(fd)
+            : Loop(loop), fd(fd)
     {
     }
 
@@ -15,44 +15,44 @@ namespace SinaiEcho
 
     void Channel::HandleEvent()
     {
-        if ((revents_ & kReadEvent) && readCallback)
-            readCallback();
+        if ((REvents_ & kReadEvent) && ReadCallback)
+            ReadCallback();
 
-        if ((revents_ & kWriteEvent) && writeCallback)
-            writeCallback();
+        if ((REvents_ & kWriteEvent) && WriteCallback)
+            WriteCallback();
     }
 
     void Channel::EnableReading()
     {
-        events_ |= kReadEvent;
-        loop->UpdateChannel(this);
+        Events_ |= kReadEvent;
+        Loop->UpdateChannel(this);
     }
 
     void Channel::EnableWriting()
     {
-        events_ |= kWriteEvent;
-        loop->UpdateChannel(this);
+        Events_ |= kWriteEvent;
+        Loop->UpdateChannel(this);
     }
 
     void Channel::DisableWriting()
     {
-        events_ &= ~kWriteEvent;
-        loop->UpdateChannel(this);
+        Events_ &= ~kWriteEvent;
+        Loop->UpdateChannel(this);
     }
 
     void Channel::DisableReading()
     {
-        events_ &= ~kReadEvent;
-        loop->UpdateChannel(this);
+        Events_ &= ~kReadEvent;
+        Loop->UpdateChannel(this);
     }
 
     void Channel::SetRevents(uint32_t revents)
     {
-        revents_ = revents;
+        REvents_ = revents;
     }
 
     uint32_t Channel::GetRevents() const
     {
-        return revents_;
+        return REvents_;
     }
 }

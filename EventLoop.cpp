@@ -37,31 +37,31 @@ namespace SinaiEcho
         wakeup = w;
 
 
-        wakeupChannel = new Channel(this, wakeup->GetFd());
+        WakeupChannel = new Channel(this, wakeup->GetFd());
 
-        wakeupChannel->SetReadCallback([this] {
+        WakeupChannel->SetReadCallback([this] {
             HandleWakeup();
         });
 
-        wakeupChannel->EnableReading();
+        WakeupChannel->EnableReading();
     }
 
     EventLoop::~EventLoop()
     {
-        wakeupChannel->DisableReading();
-        wakeupChannel->DisableWriting();
-        delete wakeupChannel;
+        WakeupChannel->DisableReading();
+        WakeupChannel->DisableWriting();
+        delete WakeupChannel;
     }
 
     void EventLoop::Loop()
     {
-        while (!quit)
+        while (!Quit)
         {
-            activeChannels.clear();
+            ActiveChannels.clear();
 
-            poller->Poll(1000, activeChannels);
+            poller->Poll(1000, ActiveChannels);
 
-            for (auto ch : activeChannels)
+            for (auto ch : ActiveChannels)
             {
                 ch->HandleEvent();
             }
@@ -69,8 +69,8 @@ namespace SinaiEcho
             // 执行任务
             std::queue<std::function<void()>> functors;
             {
-                std::lock_guard<std::mutex> lock(mutex);
-                std::swap(functors, pendingFunctors);
+                std::lock_guard<std::mutex> lock(Mutex);
+                std::swap(functors, PendingFunctors);
             }
 
             while (!functors.empty())
@@ -89,8 +89,8 @@ namespace SinaiEcho
     void EventLoop::RunInLoop(std::function<void()> cb)
     {
         {
-            std::lock_guard<std::mutex> lock(mutex);
-            pendingFunctors.push(cb);
+            std::lock_guard<std::mutex> lock(Mutex);
+            PendingFunctors.push(cb);
         }
 
         wakeup->Wake();

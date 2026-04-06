@@ -36,16 +36,16 @@ namespace SinaiEcho
         void HandleWakeup();
 
     private:
-        bool quit = false;
+        bool Quit = false;
 
         Poller* poller;
-        std::vector<Channel*> activeChannels;
+        std::vector<Channel*> ActiveChannels;
 
-        std::queue<std::function<void()>> pendingFunctors;
-        std::mutex mutex;
+        std::queue<std::function<void()>> PendingFunctors;
+        std::mutex Mutex;
 
         Wakeup* wakeup;
-        Channel* wakeupChannel;
+        Channel* WakeupChannel;
     };
 }
 

@@ -25,44 +25,44 @@ namespace SinaiEcho
 
 // ================= 构造 / 析构 =================
     NetConnection::NetConnection(EventLoop* loop, std::unique_ptr<Socket> Sock)
-            : loop_(loop), fd_(Sock->GetFileDescriptor()), SSock(std::move(Sock))
+            : Loop(loop), fd_(Sock->GetFileDescriptor()), SSock(std::move(Sock))
     {
         //SetNonBlock(fd_);
-        channel_ = new Channel(loop, fd_);
+        channel = new Channel(loop, fd_);
 
-        //channel_->EnableReading();
-        //channel_->EnableWriting();
-        channel_->SetReadCallback([this]() {
+        //channel->EnableReading();
+        //channel->EnableWriting();
+        channel->SetReadCallback([this]() {
             HandleRead();
         });
-        channel_->SetWriteCallback([this]() {
+        channel->SetWriteCallback([this]() {
             HandleWrite();
         });
 
-        loop_->AddChannel(channel_);
+        Loop->AddChannel(channel);
     }
 
     NetConnection::~NetConnection()
     {
         //close(fd_);
-        channel_->DisableWriting();
-        channel_->DisableReading();
-        loop_->RemoveChannel(channel_);
-        delete channel_;
+        channel->DisableWriting();
+        channel->DisableReading();
+        Loop->RemoveChannel(channel);
+        delete channel;
 
     }
 
 // ================= 对外接口 =================
     void NetConnection::Send(std::string& Msg)
     {
-        loop_->RunInLoop([this, Msg]() {
+        Loop->RunInLoop([this, Msg]() {
             SendInLoop(Msg.data());
         });
     }
 
     void NetConnection::Close()
     {
-        loop_->RunInLoop([this]() {
+        Loop->RunInLoop([this]() {
             HandleClose();
         });
     }
@@ -101,20 +101,20 @@ namespace SinaiEcho
 
         while (true)
         {
-            if (InputBuffer.size()  - readIndex < 4)
+            if (InputBuffer.size()  - ReadIndex < 4)
                 break;
-            int len = SocketUtil::BytesToInt((byte *)InputBuffer.data()+ readIndex);
+            int len = SocketUtil::BytesToInt((byte *)InputBuffer.data()+ ReadIndex);
 
-            if (InputBuffer.size()  - readIndex < 4 + len)
+            if (InputBuffer.size()  - ReadIndex < 4 + len)
                 break;
-            std::string msg = InputBuffer.substr(readIndex + 4, len);
+            std::string msg = InputBuffer.substr(ReadIndex + 4, len);
             std::cout << "recv: " << msg << " connection fd:" << SSock->GetFileDescriptor() << std::endl;
-            readIndex += 4 + len;
+            ReadIndex += 4 + len;
 
-            if (readIndex > 1024)
+            if (ReadIndex > 1024)
             {
-                InputBuffer.erase(0, readIndex);
-                readIndex = 0;
+                InputBuffer.erase(0, ReadIndex);
+                ReadIndex = 0;
             }
         }
 
@@ -130,15 +130,15 @@ namespace SinaiEcho
         std::cout << "connection closed fd=" << fd_ << std::endl;
 
 
-        channel_->DisableWriting();
-        channel_->DisableReading();
-        loop_->RemoveChannel(channel_);
+        channel->DisableWriting();
+        channel->DisableReading();
+        Loop->RemoveChannel(channel);
         SSock->Close();
         //close(fd_);
         // 通知上层删除
-        if (closeCallback_)
+        if (CloseCallback_)
         {
-            closeCallback_(this);
+            CloseCallback_(this);
         }
 
     }
@@ -155,18 +155,18 @@ namespace SinaiEcho
         OutputBuffer.append(Msg);
 
 // 尝试发送 OutputBuffer 的内容
-        if (!channel_->IsWriting())
+        if (!channel->IsWriting())
         {
             ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
             if (n > 0)
             {
                 OutputBuffer.erase(0, n);
                 if (!OutputBuffer.empty())
-                    channel_->EnableWriting();
+                    channel->EnableWriting();
             }
             else if (n < 0 && (errno == EAGAIN || errno == EWOULDBLOCK))
             {
-                channel_->EnableWriting();
+                channel->EnableWriting();
             }
             else
             {
@@ -191,26 +191,26 @@ namespace SinaiEcho
             if (err == 0)
             {
                 state = kConnected;
-                channel_->DisableWriting();
-                channel_->EnableReading();
+                channel->DisableWriting();
+                channel->EnableReading();
                 std::cout << "HandleWrite connect success\n";
-                if(connectedCallback)
+                if(ConnectedCallback)
                 {
-                    connectedCallback(this);
+                    ConnectedCallback(this);
                 }
 
             }
             else
             {
                 std::cout << "HandleWrite connect fail\n";
-                channel_->DisableWriting();
+                channel->DisableWriting();
             }
         }
         else if (state == kConnected)
         {
             if (OutputBuffer.empty())
             {
-                channel_->DisableWriting();
+                channel->DisableWriting();
                 return;
             }
             ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
@@ -220,7 +220,7 @@ namespace SinaiEcho
                 OutputBuffer.erase(0, n);
                 if (OutputBuffer.empty())
                 {
-                    channel_->DisableWriting();
+                    channel->DisableWriting();
                 }
             }
             else if(n < 0)
@@ -246,7 +246,7 @@ namespace SinaiEcho
 
     Channel *NetConnection::GetChannel()
     {
-        return channel_;
+        return channel;
     }
 
     void NetConnection::SetState(State st)

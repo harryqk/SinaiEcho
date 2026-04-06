@@ -20,8 +20,8 @@ namespace SinaiEcho
 
         void HandleEvent();
 
-        void SetReadCallback(EventCallback cb) { readCallback = cb; }
-        void SetWriteCallback(EventCallback cb) { writeCallback = cb; }
+        void SetReadCallback(EventCallback cb) { ReadCallback = cb; }
+        void SetWriteCallback(EventCallback cb) { WriteCallback = cb; }
 
         int GetFd() const { return fd; }
 
@@ -30,22 +30,22 @@ namespace SinaiEcho
         void DisableWriting();
         void DisableReading();
 
-        int events_; // 想要注册的事件
-        bool IsReading() const { return events_ & kReadEvent; }
-        bool IsWriting() const { return events_ & kWriteEvent; }
+        int Events_; // 想要注册的事件
+        bool IsReading() const { return Events_ & kReadEvent; }
+        bool IsWriting() const { return Events_ & kWriteEvent; }
 
         void SetRevents(uint32_t revents);
         uint32_t GetRevents() const;
         static const uint32_t kReadEvent = 0x01;
         static const uint32_t kWriteEvent = 0x02;
     private:
-        EventLoop* loop;
+        EventLoop* Loop;
         int fd;
 
 
-        uint32_t revents_;// Poller 返回实际发生的事件
-        EventCallback readCallback;
-        EventCallback writeCallback;
+        uint32_t REvents_;// Poller 返回实际发生的事件
+        EventCallback ReadCallback;
+        EventCallback WriteCallback;
     };
 }
 
