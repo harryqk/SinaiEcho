@@ -7,12 +7,12 @@ namespace SinaiEcho
 {
     SCPPSocketFactory::SCPPSocketFactory()
     {
-        std::printf("construct SCPPSocketFactory\n");
+        printf("construct SCPPSocketFactory\n");
     }
 
     SCPPSocketFactory::~SCPPSocketFactory()
     {
-        std::printf("destruct SCPPSocketFactory\n");
+        printf("destruct SCPPSocketFactory\n");
     }
 }
 

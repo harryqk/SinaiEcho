@@ -5,9 +5,9 @@
 #ifndef SINAIECHO_SCPPSOCKETANDROID_H
 #define SINAIECHO_SCPPSOCKETANDROID_H
 #include "../Socket.h"
-namespace scppsocket
+namespace SinaiEcho
 {
-    class SCPPSocketAndroid :public SCPPSocket
+    class SCPPSocketAndroid :public Socket
     {
     public:
         SCPPSocketAndroid(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol);
@@ -23,7 +23,7 @@ namespace scppsocket
         virtual int SetNonBlockMode(bool NonBlock) override;
         virtual bool Close() override;
         virtual bool ShutDown() override;
-        virtual SCPPSocket* Clone(SSocket NewSocket, sockaddr_in NewPeerAddress) override;
+        virtual Socket* Clone(SSocket NewSocket, sockaddr_in NewPeerAddress) override;
     };
 
 

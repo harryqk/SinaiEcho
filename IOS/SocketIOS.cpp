@@ -5,9 +5,9 @@
 #include "SocketIOS.h"
 #include <iostream>
 #include <fcntl.h>
-namespace scppsocket
+namespace SinaiEcho
 {
-    SocketIOS::SocketIOS(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) : SCPPSocket(AddressFamily, Type, Protocol)
+    SocketIOS::SocketIOS(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) : Socket(AddressFamily, Type, Protocol)
     {
         std::printf("this is SocketIOS Construct\n");
         FileDescriptor = socket(AF_INET, SOCK_STREAM, 0);

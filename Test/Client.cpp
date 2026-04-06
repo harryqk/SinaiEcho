@@ -11,7 +11,6 @@
 #include "../EventLoop.h"
 #include "../Channel.h"
 #include "../NetConnection.h"
-#include "../NetManager.h"
 #include "../SocketUtil.h"
 #include "../TCPClient.h"
 using namespace std;

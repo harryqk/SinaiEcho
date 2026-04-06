@@ -1,6 +1,6 @@
 #ifndef SINAIECHO_LIB4UNITY_H
 #define SINAIECHO_LIB4UNITY_H
-#include "NetManager.h"
+
 #if UNITY_WSA
 #define EXPORT_API __declspec(dllexport) __stdcall
 #elif UNITY_WIN

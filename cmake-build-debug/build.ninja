@@ -55,12 +55,6 @@ build CMakeFiles/SCPPSocketMac.dir/Channel.cpp.o: CXX_COMPILER__SCPPSocketMac_De
   OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
   OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
 
-build CMakeFiles/SCPPSocketMac.dir/Connection.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/Connection.cpp || cmake_object_order_depends_target_SCPPSocketMac
-  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/Connection.cpp.o.d
-  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
-  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
-
 build CMakeFiles/SCPPSocketMac.dir/EventLoop.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/EventLoop.cpp || cmake_object_order_depends_target_SCPPSocketMac
   DEP_FILE = CMakeFiles/SCPPSocketMac.dir/EventLoop.cpp.o.d
   FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
@@ -85,30 +79,6 @@ build CMakeFiles/SCPPSocketMac.dir/NetConnection.cpp.o: CXX_COMPILER__SCPPSocket
   OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
   OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
 
-build CMakeFiles/SCPPSocketMac.dir/NetManager.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetManager.cpp || cmake_object_order_depends_target_SCPPSocketMac
-  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetManager.cpp.o.d
-  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
-  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
-
-build CMakeFiles/SCPPSocketMac.dir/NetManagerWorker.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetManagerWorker.cpp || cmake_object_order_depends_target_SCPPSocketMac
-  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetManagerWorker.cpp.o.d
-  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
-  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
-
-build CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerClient.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetManagerWorkerClient.cpp || cmake_object_order_depends_target_SCPPSocketMac
-  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerClient.cpp.o.d
-  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
-  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
-
-build CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerServer.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/NetManagerWorkerServer.cpp || cmake_object_order_depends_target_SCPPSocketMac
-  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerServer.cpp.o.d
-  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
-  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
-
 build CMakeFiles/SCPPSocketMac.dir/SCPPSocketFactory.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/SCPPSocketFactory.cpp || cmake_object_order_depends_target_SCPPSocketMac
   DEP_FILE = CMakeFiles/SCPPSocketMac.dir/SCPPSocketFactory.cpp.o.d
   FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
@@ -129,12 +99,6 @@ build CMakeFiles/SCPPSocketMac.dir/SocketUtil.cpp.o: CXX_COMPILER__SCPPSocketMac
 
 build CMakeFiles/SCPPSocketMac.dir/TCPClient.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/TCPClient.cpp || cmake_object_order_depends_target_SCPPSocketMac
   DEP_FILE = CMakeFiles/SCPPSocketMac.dir/TCPClient.cpp.o.d
-  FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
-  OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
-
-build CMakeFiles/SCPPSocketMac.dir/TCPConnection.cpp.o: CXX_COMPILER__SCPPSocketMac_Debug /Volumes/Mac/Develop/ClionProject/SinaiEcho/TCPConnection.cpp || cmake_object_order_depends_target_SCPPSocketMac
-  DEP_FILE = CMakeFiles/SCPPSocketMac.dir/TCPConnection.cpp.o.d
   FLAGS = -fms-extensions -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir
   OBJECT_FILE_DIR = CMakeFiles/SCPPSocketMac.dir
@@ -165,7 +129,7 @@ build CMakeFiles/SCPPSocketMac.dir/Mac/SocketMac.cpp.o: CXX_COMPILER__SCPPSocket
 #############################################
 # Link the static library ../lib/libSCPPSocketMac.a
 
-build ../lib/libSCPPSocketMac.a: CXX_STATIC_LIBRARY_LINKER__SCPPSocketMac_Debug CMakeFiles/SCPPSocketMac.dir/Channel.cpp.o CMakeFiles/SCPPSocketMac.dir/Connection.cpp.o CMakeFiles/SCPPSocketMac.dir/EventLoop.cpp.o CMakeFiles/SCPPSocketMac.dir/Lib4Unity.cpp.o CMakeFiles/SCPPSocketMac.dir/Message.cpp.o CMakeFiles/SCPPSocketMac.dir/NetConnection.cpp.o CMakeFiles/SCPPSocketMac.dir/NetManager.cpp.o CMakeFiles/SCPPSocketMac.dir/NetManagerWorker.cpp.o CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerClient.cpp.o CMakeFiles/SCPPSocketMac.dir/NetManagerWorkerServer.cpp.o CMakeFiles/SCPPSocketMac.dir/SCPPSocketFactory.cpp.o CMakeFiles/SCPPSocketMac.dir/Socket.cpp.o CMakeFiles/SCPPSocketMac.dir/SocketUtil.cpp.o CMakeFiles/SCPPSocketMac.dir/TCPClient.cpp.o CMakeFiles/SCPPSocketMac.dir/TCPConnection.cpp.o CMakeFiles/SCPPSocketMac.dir/TCPServer.cpp.o CMakeFiles/SCPPSocketMac.dir/Mac/SCPPSocketFactoryMac.cpp.o CMakeFiles/SCPPSocketMac.dir/Mac/SocketMac.cpp.o
+build ../lib/libSCPPSocketMac.a: CXX_STATIC_LIBRARY_LINKER__SCPPSocketMac_Debug CMakeFiles/SCPPSocketMac.dir/Channel.cpp.o CMakeFiles/SCPPSocketMac.dir/EventLoop.cpp.o CMakeFiles/SCPPSocketMac.dir/Lib4Unity.cpp.o CMakeFiles/SCPPSocketMac.dir/Message.cpp.o CMakeFiles/SCPPSocketMac.dir/NetConnection.cpp.o CMakeFiles/SCPPSocketMac.dir/SCPPSocketFactory.cpp.o CMakeFiles/SCPPSocketMac.dir/Socket.cpp.o CMakeFiles/SCPPSocketMac.dir/SocketUtil.cpp.o CMakeFiles/SCPPSocketMac.dir/TCPClient.cpp.o CMakeFiles/SCPPSocketMac.dir/TCPServer.cpp.o CMakeFiles/SCPPSocketMac.dir/Mac/SCPPSocketFactoryMac.cpp.o CMakeFiles/SCPPSocketMac.dir/Mac/SocketMac.cpp.o
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   LANGUAGE_COMPILE_FLAGS = -fms-extensions -g
   OBJECT_DIR = CMakeFiles/SCPPSocketMac.dir

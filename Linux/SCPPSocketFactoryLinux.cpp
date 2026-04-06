@@ -4,15 +4,14 @@
 
 #include "SCPPSocketFactoryLinux.h"
 #include "SocketLinux.h"
-#include "TCPClientNetManagerWorkerLinux.h"
-#include "TCPServerNetManagerWorkerLinux.h"
+
 #include <iostream>
-namespace scppsocket
+namespace SinaiEcho
 {
-    SCPPSocket* SCPPSocketFactoryLinux::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
+    Socket* SCPPSocketFactoryLinux::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
     {
-        SocketLinux* SocketLinux = new SocketLinux(AddressFamily, Type, Protocol);
-        return SocketLinux;
+        SocketLinux* Linux = new SocketLinux(AddressFamily, Type, Protocol);
+        return Linux;
     }
 
     sockaddr_in SCPPSocketFactoryLinux::CreateAddress(const char *Address, int Port)
@@ -25,20 +24,6 @@ namespace scppsocket
         return server_addr;
     }
 
-    NetManagerWorker *SCPPSocketFactoryLinux::CreateTCPClientNetMangerWorker(SCPPSocket* Local)
-    {
-        TCPClientNetManagerWorkerLinux* Linux = new TCPClientNetManagerWorkerLinux();
-        Linux->Local = Local;
-        //Mac->ConnectionToServer = ConnectionToServer;
-        return Linux;
-    }
-
-    NetManagerWorker *SCPPSocketFactoryLinux::CreateTCPServerNetMangerWorker(SCPPSocket* Local)
-    {
-        TCPServerNetManagerWorkerLinux* Linux = new TCPServerNetManagerWorkerLinux();
-        Linux->SetLocal(Local);
-        return Linux;
-    }
 
     SCPPSocketFactoryLinux::SCPPSocketFactoryLinux()
     {

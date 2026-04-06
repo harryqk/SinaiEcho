@@ -4,15 +4,14 @@
 
 #include "SCPPSocketFactoryIOS.h"
 #include "SocketIOS.h"
-#include "TCPClientNetManagerWorkerIOS.h"
-#include "TCPServerNetManagerWorkerIOS.h"
+
 #include <iostream>
-namespace scppsocket
+namespace SinaiEcho
 {
-    SCPPSocket* SCPPSocketFactoryIOS::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
+    Socket* SCPPSocketFactoryIOS::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
     {
-        SocketIOS* SocketIOS = new SocketIOS(AddressFamily, Type, Protocol);
-        return SocketIOS;
+        SocketIOS* IOS = new SocketIOS(AddressFamily, Type, Protocol);
+        return IOS;
     }
 
     sockaddr_in SCPPSocketFactoryIOS::CreateAddress(const char *Address, int Port)
@@ -25,20 +24,7 @@ namespace scppsocket
         return server_addr;
     }
 
-    NetManagerWorker *SCPPSocketFactoryIOS::CreateTCPClientNetMangerWorker(SCPPSocket* Local)
-    {
-        TCPClientNetManagerWorkerIOS* IOS = new TCPClientNetManagerWorkerIOS();
-        IOS->Local = Local;
-        //IOS->ConnectionToServer = ConnectionToServer;
-        return IOS;
-    }
 
-    NetManagerWorker *SCPPSocketFactoryIOS::CreateTCPServerNetMangerWorker(SCPPSocket* Local)
-    {
-        TCPServerNetManagerWorkerIOS* IOS = new TCPServerNetManagerWorkerIOS();
-        IOS->SetLocal(Local);
-        return IOS;
-    }
 
     SCPPSocketFactoryIOS::SCPPSocketFactoryIOS()
     {

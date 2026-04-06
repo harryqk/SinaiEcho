@@ -1,7 +1,6 @@
 #include "Lib4Unity.h"
 
 #include <iostream>
-#include "NetManager.h"
 
 //namespace SinaiEcho
 //{

@@ -5,16 +5,15 @@
 #ifndef SINAIECHO_SCPPSOCKETFACTORYANDROID_H
 #define SINAIECHO_SCPPSOCKETFACTORYANDROID_H
 #include "../SCPPSocketFactory.h"
-namespace scppsocket
+namespace SinaiEcho
 {
     class SCPPSocketFactoryAndroid : public SCPPSocketFactory{
     public:
         SCPPSocketFactoryAndroid();
         virtual ~SCPPSocketFactoryAndroid() override;
-        virtual SCPPSocket* CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) override;
+        virtual Socket* CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) override;
         virtual sockaddr_in CreateAddress(const char* Address, int Port) override;
-        virtual NetManagerWorker* CreateTCPServerNetMangerWorker(SCPPSocket* Local) override;
-        virtual NetManagerWorker* CreateTCPClientNetMangerWorker(SCPPSocket* Local) override;
+
     };
 
 }

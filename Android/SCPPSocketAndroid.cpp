@@ -5,7 +5,7 @@
 #include "SCPPSocketAndroid.h"
 #include <iostream>
 #include <fcntl.h>
-namespace scppsocket
+namespace SinaiEcho
 {
     SCPPSocketAndroid::SCPPSocketAndroid(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) : SCPPSocket(AddressFamily, Type, Protocol)
     {
@@ -205,7 +205,7 @@ namespace scppsocket
         }
     }
 
-    SCPPSocket *SCPPSocketAndroid::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
+    Socket *SCPPSocketAndroid::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
     {
         SCPPSocketAndroid* Android = new SCPPSocketAndroid(AddressFamily, Type, Protocol);
         Android->SetPeerAddress(NewPeerAddress);

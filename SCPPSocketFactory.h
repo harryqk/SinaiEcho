@@ -4,8 +4,8 @@
 
 #ifndef SINAIECHO_SCPPSOCKETFACTORY_H
 #define SINAIECHO_SCPPSOCKETFACTORY_H
-//#include "Socket.h"
-#include "NetManagerWorker.h"
+#include "Socket.h"
+
 #include <list>
 namespace SinaiEcho
 {

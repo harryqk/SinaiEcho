@@ -4,15 +4,14 @@
 
 #include "SCPPSocketFactoryAndroid.h"
 #include "SCPPSocketAndroid.h"
-#include "TCPClientNetManagerWorkerAndroid.h"
-#include "TCPServerNetManagerWorkerAndroid.h"
+
 #include <iostream>
-namespace scppsocket
+namespace SinaiEcho
 {
-    SCPPSocket* SCPPSocketFactoryAndroid::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
+    Socket* SCPPSocketFactoryAndroid::CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol)
     {
-        SCPPSocketAndroid* SocketAndroid = new SCPPSocketAndroid(AddressFamily, Type, Protocol);
-        return SocketAndroid;
+        SocketAndroid* Android = new SocketAndroid(AddressFamily, Type, Protocol);
+        return Android;
     }
 
     sockaddr_in SCPPSocketFactoryAndroid::CreateAddress(const char *Address, int Port)
@@ -24,21 +23,7 @@ namespace scppsocket
         inet_pton(AF_INET, Address, &server_addr.sin_addr);
         return server_addr;
     }
-
-    NetManagerWorker *SCPPSocketFactoryAndroid::CreateTCPClientNetMangerWorker(SCPPSocket* Local)
-    {
-        TCPClientNetManagerWorkerAndroid* Mac = new TCPClientNetManagerWorkerAndroid();
-        Mac->Local = Local;
-        //Mac->ConnectionToServer = ConnectionToServer;
-        return Mac;
-    }
-
-    NetManagerWorker *SCPPSocketFactoryAndroid::CreateTCPServerNetMangerWorker(SCPPSocket* Local)
-    {
-        TCPServerNetManagerWorkerAndroid* Mac = new TCPServerNetManagerWorkerAndroid();
-        Mac->SetLocal(Local);
-        return Mac;
-    }
+    
 
     SCPPSocketFactoryAndroid::SCPPSocketFactoryAndroid()
     {
