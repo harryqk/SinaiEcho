@@ -5,9 +5,9 @@
 #include "SocketLinux.h"
 #include <iostream>
 #include <fcntl.h>
-namespace scppsocket
+namespace SinaiEcho
 {
-    SocketLinux::SocketLinux(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) : SCPPSocket(AddressFamily, Type, Protocol)
+    SocketLinux::SocketLinux(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) : Socket(AddressFamily, Type, Protocol)
     {
         std::printf("this is SocketLinux Construct\n");
         FileDescriptor = socket(AF_INET, SOCK_STREAM, 0);
@@ -89,6 +89,19 @@ namespace scppsocket
         }
         else {
             std::printf("Linux Accept Success\n");
+        }
+        return NewSock;
+    }
+
+    int SocketLinux::Accept(int Fd)
+    {
+        int NewSock = accept(Fd, nullptr, nullptr);
+        if (NewSock == SOCKET_ERROR)
+        {
+            perror("Mac Accept Fail Error:");
+        }
+        else {
+            std::printf("Mac Accept Success\n");
         }
         return NewSock;
     }
@@ -203,11 +216,17 @@ namespace scppsocket
         }
     }
 
-    SCPPSocket *SocketLinux::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
+    Socket* SocketLinux::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
     {
         SocketLinux* Mac = new SocketLinux(AddressFamily, Type, Protocol);
         Mac->SetPeerAddress(NewPeerAddress);
         Mac->SetFileDescriptor(NewSocket);
         return Mac;
+    }
+
+    bool SocketLinux::GetSocketError(int& err)
+    {
+        socklen_t len = sizeof(err);
+        return getsockopt(FileDescriptor, SOL_SOCKET, SO_ERROR, &err, &len) == 0;
     }
 }

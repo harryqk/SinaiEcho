@@ -5,16 +5,45 @@
 #include <iostream>
 #include "TCPClient.h"
 #include "SCPPSocketFactory.h"
+
+#include "EventLoop.h"
+#include "Channel.h"
+
+#ifdef _WIN32
+
+
+#elif __APPLE__
+
 #include "./Poller/KqueuePoller.h"
 #include "./Wakeup//PipeWakeup.h"
 #include "./Mac/SCPPSocketFactoryMac.h"
-#include "EventLoop.h"
-#include "Channel.h"
+
+#elif __ANDROID__
+
+#elif __linux__
+#include "./Poller/EpollPoller.h"
+#include "./Wakeup//EventfdWakeup.h"
+#include "./Linux/SCPPSocketFactoryLinux.h"
+#include <memory>
+#endif
 namespace SinaiEcho
 {
     TCPClient::TCPClient(EventLoop *el)
     {
+#ifdef _WIN32
+
+
+#elif __APPLE__
         Factory = new SCPPSocketFactoryMac();
+
+
+#elif __ANDROID__
+
+#elif __linux__
+        Factory = new SCPPSocketFactoryLinux();
+
+#endif
+
         Local = Factory->CreateSocket(SocketAddressFamily::IPv4, SocketType::SOCKTYPE_Streaming, SocketProtocol::TCP);
         if(Local->GetFileDescriptor() == SOCKET_ERROR)
         {
@@ -50,6 +79,7 @@ namespace SinaiEcho
         //auto Connection = std::make_shared<NetConnection>(loop, std::unique_ptr<Socket>(Local));
         auto Connection = new NetConnection(loop, std::unique_ptr<Socket>(Local));
         std::string msg = std::to_string(sockfd) + ":" + std::string("hello");
+        std::cout << msg << std::endl;
         Connection->Send(msg);
         //std::weak_ptr<NetConnection> weakConn = Connection;
         //Connection->GetChannel()->EnableReading();

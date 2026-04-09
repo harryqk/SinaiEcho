@@ -12,18 +12,27 @@
 #include <unistd.h>
 #include <iostream>
 #include "../Socket.h"
-#include "../SCPPSocketFactory.h"
-#include "../Mac/SCPPSocketFactoryMac.h"
-#include "../Poller/KqueuePoller.h"
-#include "../Wakeup/PipeWakeup.h"
+//#include "../SCPPSocketFactory.h"
+//#include "../Mac/SCPPSocketFactoryMac.h"
+//#include "../Poller/KqueuePoller.h"
+//#include "../Wakeup/PipeWakeup.h"
 #include "../TCPServer.h"
+
 using namespace SinaiEcho;
+void OnMessage(const NetMessage &msg)
+{
+    std::cout << "recv from connection fd:=" << msg.fd << " " << msg.Data << std::endl;
+}
+
 int main()
 {
     TCPServer Server(8888);
+    Server.SetMessageCallback(OnMessage);
     Server.Start();
     return 0;
 }
+
+
 //int main()
 //{
 //    Socket* Local;

@@ -24,6 +24,21 @@ namespace SinaiEcho
         return server_addr;
     }
 
+    Socket* SCPPSocketFactoryLinux::CreateConnectionSocket(int Fd)
+    {
+        SocketLinux* Sock = new SocketLinux();
+        Sock->SetFileDescriptor(Fd);
+        //set NonBlockMode
+        bool ret = Sock->SetNonBlockMode(true);
+        if(!ret)
+        {
+
+            std::printf("Set NonBlock mode fail");
+
+        }
+        return Sock;
+    }
+
 
     SCPPSocketFactoryLinux::SCPPSocketFactoryLinux()
     {

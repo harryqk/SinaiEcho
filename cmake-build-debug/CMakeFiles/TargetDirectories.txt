@@ -1,4 +1,4 @@
-/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/SCPPSocketMac.dir
+/Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/SocketMac.dir
 /Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/Poller.dir
 /Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/Wakeup.dir
 /Volumes/Mac/Develop/ClionProject/SinaiEcho/cmake-build-debug/CMakeFiles/Server.dir

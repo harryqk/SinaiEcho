@@ -11,8 +11,8 @@
 #include <string>
 #include <functional>
 #include "Socket.h"
-
-
+#include "NetMessage.h"
+#include <memory>
 namespace SinaiEcho
 {
     class EventLoop;
@@ -23,12 +23,10 @@ namespace SinaiEcho
         kConnected,
         kDisconnected
     };
-
     class NetConnection
     {
     public:
         using EventCallBack = std::function<void(NetConnection*)>;
-
     public:
         // Socket 传入后 ownership 转移
         NetConnection(EventLoop* loop, std::unique_ptr<Socket> Sock);
@@ -53,6 +51,13 @@ namespace SinaiEcho
         {
             ConnectedCallback = cb;
         }
+
+        // 消息解析回调（给上层用，比如客户端提示）
+        void SetMessageCallback(MessageCallback cb)
+        {
+            OnMessage = cb;
+        }
+
         void SetState(State st);
         Channel* GetChannel();
     private:
@@ -78,6 +83,7 @@ namespace SinaiEcho
         std::string InputBuffer;
         std::string OutputBuffer;
         int ReadIndex = 0;
+        MessageCallback OnMessage;
     };
 }
 #endif //SINAIECHO_NETCONNECTION_H

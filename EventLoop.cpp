@@ -4,8 +4,8 @@
 
 #include "EventLoop.h"
 #include "Channel.h"
-#include "./Wakeup/PipeWakeup.h"
-#include "./Poller/KqueuePoller.h"
+#include "./Wakeup/Wakeup.h"
+#include "./Poller/Poller.h"
 #include <unistd.h>
 namespace SinaiEcho
 {

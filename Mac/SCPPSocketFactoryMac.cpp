@@ -28,6 +28,14 @@ namespace SinaiEcho
     {
         SocketMac* Sock = new SocketMac();
         Sock->SetFileDescriptor(Fd);
+        //set NonBlockMode
+        bool ret = Sock->SetNonBlockMode(true);
+        if(!ret)
+        {
+
+            std::printf("Set NonBlock mode fail");
+
+        }
         return Sock;
     }
 

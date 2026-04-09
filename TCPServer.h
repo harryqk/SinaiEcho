@@ -9,7 +9,8 @@
 #include <iostream>
 #include <unistd.h>
 #include <unordered_map>
-
+#include "NetMessage.h"
+#include <memory>
 namespace SinaiEcho
 {
     class EventLoop;
@@ -22,6 +23,7 @@ namespace SinaiEcho
         void Start();
         void RemoveConnection(int fd);
         void Close();
+        void SetMessageCallback(MessageCallback cb);
         private:
         void HandleAccept();
         int listenfd_;
@@ -29,6 +31,9 @@ namespace SinaiEcho
         EventLoop* loop;
         Socket* Local;
         SCPPSocketFactory* Factory;
+
+    private:
+        MessageCallback OnMessage;
     };
 }
 

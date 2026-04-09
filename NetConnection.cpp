@@ -108,7 +108,13 @@ namespace SinaiEcho
             if (InputBuffer.size()  - ReadIndex < 4 + len)
                 break;
             std::string msg = InputBuffer.substr(ReadIndex + 4, len);
-            std::cout << "recv: " << msg << " connection fd:" << SSock->GetFileDescriptor() << std::endl;
+            NetMessage message;
+            message.id = 0;    // 可以自增或全局生成
+            message.type = 0;       // 可根据协议设置类型
+            message.Data = msg;
+            message.fd = SSock->GetFileDescriptor();
+            if (OnMessage) OnMessage(message);
+            //std::cout << "recv: " << msg << " connection fd:" << SSock->GetFileDescriptor() << std::endl;
             ReadIndex += 4 + len;
 
             if (ReadIndex > 1024)

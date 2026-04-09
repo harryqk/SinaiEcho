@@ -6,6 +6,7 @@
 #define SINAIECHO_CHANNEL_H
 #pragma once
 #include <functional>
+#include <cstdint>
 namespace SinaiEcho
 {
     class EventLoop;

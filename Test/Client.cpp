@@ -5,25 +5,57 @@
 #include <iostream>
 #include "../Socket.h"
 #include "../SCPPSocketFactory.h"
-#include "../Mac/SCPPSocketFactoryMac.h"
-#include "../Poller/KqueuePoller.h"
-#include "../Wakeup/PipeWakeup.h"
 #include "../EventLoop.h"
 #include "../Channel.h"
 #include "../NetConnection.h"
 #include "../SocketUtil.h"
 #include "../TCPClient.h"
+
+#include <memory>
+#ifdef _WIN32
+
+
+#elif __APPLE__
+
+#include "../Poller/KqueuePoller.h"
+#include "../Wakeup/PipeWakeup.h"
+#include "../Mac/SCPPSocketFactoryMac.h"
+
+#elif __ANDROID__
+
+#elif __linux__
+#include "../Poller/EpollPoller.h"
+#include "../Wakeup/EventfdWakeup.h"
+#include "../Linux/SCPPSocketFactoryLinux.h"
+
+#endif
 using namespace std;
 using namespace SinaiEcho;
 int main()
 {
+#ifdef _WIN32
+
+
+#elif __APPLE__
     KqueuePoller* poller = new KqueuePoller();
     PipeWakeup* wakeup = new PipeWakeup();
+
+
+#elif __ANDROID__
+
+#elif __linux__
+    EpollPoller* poller = new EpollPoller();
+    EventfdWakeup* wakeup = new EventfdWakeup();
+
+#endif
+
+
     EventLoop loop(poller, wakeup);
-    for(int i = 0; i < 2; i++)
+    for(int i = 0; i < 80; i++)
     {
         TCPClient Client(&loop);
         Client.Connect("192.168.0.103",8888);
+        //Client.Connect("192.168.0.105",8888);
     }
     loop.Loop();
 }
