@@ -151,6 +151,8 @@ namespace SinaiEcho
 
     void NetConnection::SendInLoop(const std::string &Msg)
     {
+        if (state != kConnected)
+            return;
         if (Msg.empty()) return;
         byte bytes[4];
         int Len = Msg.size();
@@ -160,7 +162,8 @@ namespace SinaiEcho
         OutputBuffer.append((char*)bytes, 4);
         OutputBuffer.append(Msg);
 
-// 尝试发送 OutputBuffer 的内容
+
+// 尝试发送一次 OutputBuffer 的内容
         ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
         if (n > 0)
         {
@@ -176,8 +179,10 @@ namespace SinaiEcho
             HandleClose();
         }
 
-        if (!OutputBuffer.empty())
+        if (!OutputBuffer.empty() && !channel->IsWriting())
+        {
             channel->EnableWriting();
+        }
     }
 
     void NetConnection::HandleWrite()

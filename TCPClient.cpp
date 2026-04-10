@@ -78,24 +78,18 @@ namespace SinaiEcho
         int sockfd = Local->GetFileDescriptor();
         //auto Connection = std::make_shared<NetConnection>(loop, std::unique_ptr<Socket>(Local));
         auto Connection = new NetConnection(loop, std::unique_ptr<Socket>(Local));
-        std::string msg = std::to_string(sockfd) + ":" + std::string("hello");
-        std::cout << msg << std::endl;
-        Connection->Send(msg);
+
+
         //std::weak_ptr<NetConnection> weakConn = Connection;
-        //Connection->GetChannel()->EnableReading();
         //测试
-//        Connection->SetConnectedCallback([weakConn](NetConnection*){
-//            if (auto nc = weakConn.lock())   // 提升为 shared_ptr
-//            {
-//                std::cout << "connect success call back\n";
-//                std::string msg = std::to_string(nc->GetFd()) + ":" + std::string("hello");
-//                //std::string big(1000000, 'A'); // 1MB
-//                for (int i = 0; i < 1; i++) {
-//                    nc->Send(msg);
-//                }
-//
-//            }
-//        });
+        Connection->SetConnectedCallback([this](NetConnection* nc){
+            std::cout << "connect success call back\n";
+            std::string msg = std::to_string(nc->GetFd()) + ":" + std::string("hello");
+            //std::string big(1000000, 'A'); // 1MB
+            for (int i = 0; i < 1; i++) {
+                nc->Send(msg);
+            }
+        });
         // 发起 connect
         int ret = connect(sockfd, (sockaddr*)&serverAddr, sizeof(serverAddr));
 
