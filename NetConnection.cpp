@@ -56,7 +56,7 @@ namespace SinaiEcho
     void NetConnection::Send(std::string& Msg)
     {
         Loop->RunInLoop([this, Msg]() {
-            SendInLoop(Msg.data());
+            SendInLoop(Msg);
         });
     }
 
@@ -161,24 +161,23 @@ namespace SinaiEcho
         OutputBuffer.append(Msg);
 
 // 尝试发送 OutputBuffer 的内容
-        if (!channel->IsWriting())
+        ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
+        if (n > 0)
         {
-            ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
-            if (n > 0)
-            {
-                OutputBuffer.erase(0, n);
-                if (!OutputBuffer.empty())
-                    channel->EnableWriting();
-            }
-            else if (n < 0 && (errno == EAGAIN || errno == EWOULDBLOCK))
-            {
-                channel->EnableWriting();
-            }
-            else
-            {
-                HandleClose();
-            }
+            OutputBuffer.erase(0, n);
         }
+        else if (n < 0 && (errno == EAGAIN || errno == EWOULDBLOCK))
+        {
+            //epollout再发送
+            //channel->EnableWriting();
+        }
+        else
+        {
+            HandleClose();
+        }
+
+        if (!OutputBuffer.empty())
+            channel->EnableWriting();
     }
 
     void NetConnection::HandleWrite()
@@ -214,39 +213,40 @@ namespace SinaiEcho
         }
         else if (state == kConnected)
         {
-            if (OutputBuffer.empty())
-            {
-                channel->DisableWriting();
-                return;
-            }
-            ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
 
-            if (n > 0)
+            while (!OutputBuffer.empty())
             {
-                OutputBuffer.erase(0, n);
-                if (OutputBuffer.empty())
+                ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
+
+                if (n > 0)
                 {
-                    channel->DisableWriting();
+                    OutputBuffer.erase(0, n);
                 }
-            }
-            else if(n < 0)
-            {
-                if (errno == EAGAIN || errno == EWOULDBLOCK)
+                else if(n < 0)
                 {
-                    // 下次写事件再写
-                    return;
+                    if (errno == EAGAIN || errno == EWOULDBLOCK)
+                    {
+                        // 下次写事件再写
+                        break;
+                    }
+                    else
+                    {
+                        HandleClose();
+                        break;
+                    }
                 }
                 else
                 {
+                    // n == 0，当作异常处理
                     HandleClose();
+                    break;
                 }
             }
-            else
-            {
-                // n == 0，当作异常处理
-                HandleClose();
-            }
 
+            if (OutputBuffer.empty())
+            {
+                channel->DisableWriting();
+            }
         }
     }
 

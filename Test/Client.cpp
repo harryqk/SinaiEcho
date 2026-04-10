@@ -51,8 +51,9 @@ int main()
 
 
     EventLoop loop(poller, wakeup);
-    for(int i = 0; i < 80; i++)
+    for(int i = 0; i < 150; i++)
     {
+        if(i % 10 == 0) sleep(1);
         TCPClient Client(&loop);
         Client.Connect("192.168.0.103",8888);
         //Client.Connect("192.168.0.105",8888);

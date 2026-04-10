@@ -71,7 +71,7 @@ namespace SinaiEcho
             return;
         }
         //listen;
-        result = Local->Listen(4);
+        result = Local->Listen(SOMAXCONN);
         if(result == SOCKET_ERROR)
         {
             std::printf("Listen fail");
