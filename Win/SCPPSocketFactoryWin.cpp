@@ -4,7 +4,7 @@
 
 #include "SCPPSocketFactoryWin.h"
 #include "SocketWin.h"
-
+#include <cstdio>
 
 
 namespace SinaiEcho
@@ -24,6 +24,21 @@ namespace SinaiEcho
         SocketWin* Win = new SocketWin(AddressFamily, Type, Protocol);
         return Win;
 
+    }
+
+    Socket* SCPPSocketFactoryWin::CreateConnectionSocket(int Fd)
+    {
+        SocketWin* Sock = new SocketWin();
+        Sock->SetFileDescriptor(Fd);
+        //set NonBlockMode
+        bool ret = Sock->SetNonBlockMode(true);
+        if(!ret)
+        {
+
+            std::printf("Set NonBlock mode fail");
+
+        }
+        return Sock;
     }
 
     sockaddr_in SCPPSocketFactoryWin::CreateAddress(const char *Address, int Port)

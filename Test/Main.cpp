@@ -4,12 +4,11 @@
 
 #include "../EventLoop.h"
 #include "../NetConnection.h"
-#include <arpa/inet.h>
-#include <unistd.h>
+//#include <arpa/inet.h>
 #include <iostream>
 #include "../Channel.h"
-#include <arpa/inet.h>
-#include <unistd.h>
+//#include <arpa/inet.h>
+//#include <unistd.h>
 #include <iostream>
 #include "../Socket.h"
 //#include "../SCPPSocketFactory.h"
@@ -17,7 +16,7 @@
 //#include "../Poller/KqueuePoller.h"
 //#include "../Wakeup/PipeWakeup.h"
 #include "../TCPServer.h"
-
+#include "../NetSystem.h"
 using namespace SinaiEcho;
 void OnMessage(const NetMessage &msg)
 {
@@ -26,9 +25,11 @@ void OnMessage(const NetMessage &msg)
 
 int main()
 {
+    NetSystem::Init();
     TCPServer Server(8888);
     Server.SetMessageCallback(OnMessage);
     Server.Start();
+    NetSystem::Shutdown();
     return 0;
 }
 

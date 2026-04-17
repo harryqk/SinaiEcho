@@ -5,7 +5,7 @@
 #include "NetConnection.h"
 #include "EventLoop.h"
 #include "Channel.h"
-#include <unistd.h>
+//#include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
 #include <iostream>
@@ -17,11 +17,11 @@ namespace SinaiEcho
 
 
 // ================= 工具 =================
-    static int SetNonBlock(int fd)
-    {
-        int flags = fcntl(fd, F_GETFL, 0);
-        return fcntl(fd, F_SETFL, flags | O_NONBLOCK);
-    }
+    // static int SetNonBlock(int fd)
+    // {
+    //     int flags = fcntl(fd, F_GETFL, 0);
+    //     return fcntl(fd, F_SETFL, flags | O_NONBLOCK);
+    // }
 
 // ================= 构造 / 析构 =================
     NetConnection::NetConnection(EventLoop* loop, std::unique_ptr<Socket> Sock)
@@ -76,7 +76,7 @@ namespace SinaiEcho
         char ReadBuf[1024];
         while (true)
         {
-            ssize_t n = SSock->Read(ReadBuf, sizeof(ReadBuf), 0);
+            SockSSize_t n = SSock->Read(ReadBuf, sizeof(ReadBuf), 0);
             if (n > 0)
             {
                 InputBuffer.append(ReadBuf, n);
@@ -88,9 +88,12 @@ namespace SinaiEcho
             }
             else
             {
-                if (errno == EAGAIN)
+                int LastError = SocketUtil::GetLastError();
+                bool WouldBlock = SocketUtil::IsWouldBlock(LastError);
+                bool Interrupt = SocketUtil::IsInterrupted(LastError);
+                if (WouldBlock)
                     break;
-                if (errno == EINTR)
+                if (Interrupt)
                     continue;
 
                 HandleClose();
@@ -103,7 +106,7 @@ namespace SinaiEcho
         {
             if (InputBuffer.size()  - ReadIndex < 4)
                 break;
-            int len = SocketUtil::BytesToInt((byte *)InputBuffer.data()+ ReadIndex);
+            int len = SocketUtil::BytesToInt((unsigned char*)InputBuffer.data()+ ReadIndex);
 
             if (InputBuffer.size()  - ReadIndex < 4 + len)
                 break;
@@ -154,7 +157,7 @@ namespace SinaiEcho
         if (state != kConnected)
             return;
         if (Msg.empty()) return;
-        byte bytes[4];
+        unsigned char bytes[4];
         int Len = Msg.size();
         SocketUtil::IntToByte(Len, bytes);
 
@@ -164,13 +167,24 @@ namespace SinaiEcho
 
 
 // 尝试发送一次 OutputBuffer 的内容
-        ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
+        SockSSize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
         if (n > 0)
         {
             OutputBuffer.erase(0, n);
         }
-        else if (n < 0 && (errno == EAGAIN || errno == EWOULDBLOCK))
+        else if (n < 0)
         {
+            int LastError = SocketUtil::GetLastError();
+            bool WouldBlock = SocketUtil::IsWouldBlock(LastError);
+            bool Interrupt = SocketUtil::IsInterrupted(LastError);
+            if (Interrupt || WouldBlock)
+            {
+
+            }
+            else
+            {
+                HandleClose();
+            }
             //epollout再发送
             //channel->EnableWriting();
         }
@@ -221,7 +235,7 @@ namespace SinaiEcho
 
             while (!OutputBuffer.empty())
             {
-                ssize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
+                SockSSize_t n = SSock->Send(OutputBuffer.data(), OutputBuffer.size(), 0);
 
                 if (n > 0)
                 {
@@ -229,7 +243,10 @@ namespace SinaiEcho
                 }
                 else if(n < 0)
                 {
-                    if (errno == EAGAIN || errno == EWOULDBLOCK)
+                    int LastError = SocketUtil::GetLastError();
+                    bool WouldBlock = SocketUtil::IsWouldBlock(LastError);
+                    bool Interrupt = SocketUtil::IsInterrupted(LastError);
+                    if (Interrupt || WouldBlock)
                     {
                         // 下次写事件再写
                         break;

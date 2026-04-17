@@ -13,6 +13,7 @@ namespace SinaiEcho
         SCPPSocketFactoryWin();
         virtual ~SCPPSocketFactoryWin() override;
         virtual Socket* CreateSocket(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) override;
+        virtual Socket * CreateConnectionSocket(int Fd) override;
         virtual sockaddr_in CreateAddress(const char* Address, int Port) override;
     };
 

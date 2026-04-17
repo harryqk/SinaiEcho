@@ -47,19 +47,37 @@ if(ANDROID)
 elseif(IOS)
 elseif (MACOS)
     aux_source_directory(./Mac DIR_SRCS2)
-    add_library(SocketMac ${DIR_SRCS1} ${DIR_SRCS2} EventLoop.cpp EventLoop.h NetConnection.cpp NetConnection.h TCPServer.cpp TCPServer.h TCPClient.cpp TCPClient.h NetMessage.cpp NetMessage.h)
+    add_library(SocketMac ${DIR_SRCS1} ${DIR_SRCS2} EventLoop.cpp EventLoop.h NetConnection.cpp NetConnection.h TCPServer.cpp TCPServer.h TCPClient.cpp TCPClient.h NetMessage.cpp NetMessage.h
+            NetSystem.cpp
+            NetSystem.h)
     add_library(Poller Poller/Poller.h Poller/Poller.cpp Poller/KqueuePoller.h Poller/KqueuePoller.cpp)
     add_library(Wakeup Wakeup/Wakeup.cpp Wakeup/Wakeup.h Wakeup/PipeWakeup.cpp Wakeup/PipeWakeup.h)
     add_executable(Server Test/Main.cpp )
     target_link_libraries(Server SocketMac Poller Wakeup)
-    add_executable(Client Test/Client.cpp)
+    add_executable(Client Test/Client.cpp
+            Poller/SelectPoller.cpp
+            Poller/SelectPoller.h
+            Wakeup/SocketWakeup.cpp
+            Wakeup/SocketWakeup.h)
     target_link_libraries(Client SocketMac Poller Wakeup)
 elseif (WINDOWS)
-    #aux_source_directory(./Win DIR_SRCS2)
-    #add_library(SCPPSocketWin ${DIR_SRCS1} ${DIR_SRCS2})
+ aux_source_directory(./Win DIR_SRCS2)
+    add_library(SocketWin ${DIR_SRCS1} ${DIR_SRCS2} EventLoop.cpp  NetConnection.cpp  TCPServer.cpp  TCPClient.cpp  NetMessage.cpp
+            NetSystem.cpp
+            NetSystem.h)
+    add_library(PollerWin  Poller/Poller.cpp  Poller/SelectPoller.cpp)
+    add_library(WakeupWin Wakeup/Wakeup.cpp  Wakeup/SocketWakeup.cpp)
+    add_executable(ServerWin Test/Main.cpp )
+    add_executable(ClientWin Test/Client.cpp)
+    target_link_libraries(ServerWin SocketWin PollerWin WakeupWin ws2_32)
+    target_link_libraries(ClientWin SocketWin PollerWin WakeupWin ws2_32)
+
+
 elseif (LINUX)
     aux_source_directory(./Linux DIR_SRCS2)
-    add_library(SocketLinux ${DIR_SRCS1} ${DIR_SRCS2} EventLoop.cpp EventLoop.h NetConnection.cpp NetConnection.h TCPServer.cpp TCPServer.h TCPClient.cpp TCPClient.h NetMessage.cpp NetMessage.h)
+    add_library(SocketLinux ${DIR_SRCS1} ${DIR_SRCS2} EventLoop.cpp EventLoop.h NetConnection.cpp NetConnection.h TCPServer.cpp TCPServer.h TCPClient.cpp TCPClient.h NetMessage.cpp NetMessage.h
+            NetSystem.cpp
+            NetSystem.h)
     add_library(PollerLinux Poller/Poller.h Poller/Poller.cpp Poller/EpollPoller.cpp Poller/EpollPoller.h)
     add_library(WakeupLinux Wakeup/Wakeup.cpp Wakeup/Wakeup.h Wakeup/EventfdWakeup.cpp Wakeup/EventfdWakeup.h)
     add_executable(ServerLinux Test/Main.cpp )

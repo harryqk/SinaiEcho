@@ -1,7 +1,7 @@
 //
 // Created by harryqk on 3/30/26.
 //
-#include <unistd.h>
+//#include <unistd.h>
 #include <iostream>
 #include "../Socket.h"
 #include "../SCPPSocketFactory.h"
@@ -10,10 +10,12 @@
 #include "../NetConnection.h"
 #include "../SocketUtil.h"
 #include "../TCPClient.h"
-
+#include "../NetSystem.h"
 #include <memory>
 #ifdef _WIN32
-
+#include "../Poller/SelectPoller.h"
+#include "../Wakeup/SocketWakeup.h"
+#include "../Win/SCPPSocketFactoryWin.h"
 
 #elif __APPLE__
 
@@ -33,8 +35,10 @@ using namespace std;
 using namespace SinaiEcho;
 int main()
 {
+    NetSystem::Init();
 #ifdef _WIN32
-
+    SelectPoller* poller = new SelectPoller();
+    SocketWakeup* wakeup = new SocketWakeup();
 
 #elif __APPLE__
     KqueuePoller* poller = new KqueuePoller();
@@ -51,14 +55,20 @@ int main()
 
 
     EventLoop loop(poller, wakeup);
-    for(int i = 0; i < 1000; i++)
+    for(int i = 0; i < 5; i++)
     {
-        if(i % 30 == 0) sleep(1);
+        //if (i % 30 == 0) Sleep(1000);
+        //if (i % 30 == 0) sleep(1000);
         TCPClient Client(&loop);
-        Client.Connect("192.168.0.103",8888);
+        //win
+        Client.Connect("192.168.0.105",8888);
+        //mac
+        //Client.Connect("192.168.0.103",8888);
+        //linux
         //Client.Connect("192.168.0.105",8888);
     }
     loop.Loop();
+    NetSystem::Shutdown();
 }
 //int main()
 //{

@@ -8,7 +8,7 @@ namespace SinaiEcho
 {
     SocketWin::SocketWin(SocketAddressFamily AddressFamily, SocketType Type, SocketProtocol Protocol) : Socket(AddressFamily, Type, Protocol)
     {
-        std::printf("this is SCPPSocketWin Construct\n");
+        std::printf("this is SocketWin Construct\n");
 
         //----------------------
         // Create a SOCKET for connecting to server
@@ -20,8 +20,8 @@ namespace SinaiEcho
 
     SocketWin::~SocketWin()
     {
-        WSACleanup();
-        std::printf("this is SCPPSocketWin Destruct\n");
+       //WSACleanup();
+        std::printf("this is SocketWin Destruct\n");
     }
 
     int SocketWin::Bind(int Port)
@@ -70,15 +70,13 @@ namespace SinaiEcho
         //----------------------
         // Connect to server.
         int ret = connect(FileDescriptor, Address, sizeof (sockaddr));
-//        if (ret == SOCKET_ERROR) {
-//            wprintf(L"connect function failed with error: %ld\n", WSAGetLastError());
-//            ret = closesocket(FileDescriptor);
-//            if (ret == SOCKET_ERROR)
-//                wprintf(L"closesocket function failed with error: %ld\n", WSAGetLastError());
-//            WSACleanup();
-//            return 1;
-//        }
-
+        if (ret == SOCKET_ERROR) {
+            ret = WSAGetLastError();
+            wprintf(L"connect function failed with error: %ld\n", ret);
+        }
+        else {
+            printf("Win Connect Success\n");
+        }
         return ret;
     }
 
@@ -90,11 +88,24 @@ namespace SinaiEcho
         {
             printf("Win Accept fail, errno=%d\n", errno);
             perror("Win Accept fail");
-            WSACleanup();
+            //WSACleanup();
             return 0;
         }
         else {
             std::printf("Win Accept Success\n");
+        }
+        return NewSock;
+    }
+
+    int SocketWin::Accept(int Fd)
+    {
+        int NewSock = accept(Fd, nullptr, nullptr);
+        if (NewSock == SOCKET_ERROR)
+        {
+            perror("Mac Accept Fail Error:");
+        }
+        else {
+            std::printf("Mac Accept Success\n");
         }
         return NewSock;
     }
@@ -154,12 +165,12 @@ namespace SinaiEcho
 
     }
 
-    SCPPSocketWin::SCPPSocketWin()
+    SocketWin::SocketWin()
     {
-        std::printf("SCPPSocketWin default construct\n");
+        std::printf("SocketWin default construct\n");
     }
 
-    bool SCPPSocketWin::Close()
+    bool SocketWin::Close()
     {
         int ret;
         try {
@@ -181,7 +192,7 @@ namespace SinaiEcho
         }
     }
 
-    bool SCPPSocketWin::ShutDown()
+    bool SocketWin::ShutDown()
     {
         int ret;
         try {
@@ -203,12 +214,18 @@ namespace SinaiEcho
         }
     }
 
-    SCPPSocket *SCPPSocketWin::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
+    Socket *SocketWin::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
     {
-        SCPPSocketWin* Win = new SCPPSocketWin(AddressFamily, Type, Protocol);
+        SocketWin* Win = new SocketWin(AddressFamily, Type, Protocol);
         Win->SetPeerAddress(NewPeerAddress);
         Win->SetFileDescriptor(NewSocket);
         return Win;
+    }
+
+    bool SocketWin::GetSocketError(int& err)
+    {
+        socklen_t len = sizeof(err);
+        return getsockopt(FileDescriptor, SOL_SOCKET, SO_ERROR, (char*)&err, &len) == 0;
     }
 
 }

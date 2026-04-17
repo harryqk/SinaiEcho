@@ -1,16 +1,18 @@
 //
 // Created by harryqk on 4/5/26.
 //
-#include <unistd.h>
+//#include <unistd.h>
 #include <iostream>
 #include "TCPClient.h"
 #include "SCPPSocketFactory.h"
-
+#include "SocketUtil.h"
 #include "EventLoop.h"
 #include "Channel.h"
 
 #ifdef _WIN32
-
+#include "./Poller/SelectPoller.h"
+#include "./Wakeup/SocketWakeup.h"
+#include "./Win/SCPPSocketFactoryWin.h"
 
 #elif __APPLE__
 
@@ -31,7 +33,7 @@ namespace SinaiEcho
     TCPClient::TCPClient(EventLoop *el)
     {
 #ifdef _WIN32
-
+        Factory = new SCPPSocketFactoryWin();
 
 #elif __APPLE__
         Factory = new SCPPSocketFactoryMac();
@@ -83,7 +85,7 @@ namespace SinaiEcho
         //std::weak_ptr<NetConnection> weakConn = Connection;
         //测试
         Connection->SetConnectedCallback([this](NetConnection* nc){
-            std::cout << "connect success call back\n";
+            std::cout << "connect success call back\n" << std::endl;
             std::string msg = std::to_string(nc->GetFd()) + ":" + std::string("hello");
             //std::string big(1000000, 'A'); // 1MB
             for (int i = 0; i < 1; i++) {
@@ -91,9 +93,13 @@ namespace SinaiEcho
             }
         });
         // 发起 connect
-        int ret = connect(sockfd, (sockaddr*)&serverAddr, sizeof(serverAddr));
-
-        if (errno == EINPROGRESS)
+        //int ret = connect(sockfd, (sockaddr*)&serverAddr, sizeof(serverAddr));
+        int ret = Local->Connect((sockaddr*)&serverAddr);
+        int LastError = SocketUtil::GetLastError();
+        bool WouldBlock = SocketUtil::IsWouldBlock(LastError);
+        bool Interrupt = SocketUtil::IsInterrupted(LastError);
+        bool InProgress = SocketUtil::IsInProgress(LastError);
+        if (InProgress)
         {
             Connection->SetState(kConnecting);
             std::cout << "connect kConnecting\n";

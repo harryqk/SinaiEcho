@@ -9,19 +9,21 @@
 #include "Channel.h"
 
 #ifdef _WIN32
-
+#include "./Poller/SelectPoller.h"
+#include "./Wakeup/SocketWakeup.h"
+#include "./Win/SCPPSocketFactoryWin.h"
 
 #elif __APPLE__
 
 #include "./Poller/KqueuePoller.h"
-#include "./Wakeup//PipeWakeup.h"
+#include "./Wakeup/PipeWakeup.h"
 #include "./Mac/SCPPSocketFactoryMac.h"
 
 #elif __ANDROID__
 
 #elif __linux__
 #include "./Poller/EpollPoller.h"
-#include "./Wakeup//EventfdWakeup.h"
+#include "./Wakeup/EventfdWakeup.h"
 #include "./Linux/SCPPSocketFactoryLinux.h"
 #endif
 namespace SinaiEcho
@@ -31,7 +33,9 @@ namespace SinaiEcho
 
 #ifdef _WIN32
 
-
+        Factory = new SCPPSocketFactoryWin();
+        SelectPoller* poller = new SelectPoller();
+        SocketWakeup* wakeup = new SocketWakeup();
 #elif __APPLE__
         Factory = new SCPPSocketFactoryMac();
         KqueuePoller* poller = new KqueuePoller();
@@ -97,7 +101,7 @@ namespace SinaiEcho
         });
 
 
-        std::cout << "server start at 8888...\n";
+        std::cout << "server start at 8888.." <<  std::endl;
 
         loop->Loop();
         acceptChannel->DisableWriting();
