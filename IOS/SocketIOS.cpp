@@ -78,14 +78,12 @@ namespace SinaiEcho
         return ret;
     }
 
-    SSocket SocketIOS::Accept(sockaddr *Address)
+    int SocketIOS::Accept(int Fd)
     {
-        SockLen_t Len = sizeof(struct  sockaddr);
-        SSocket NewSock = accept(FileDescriptor, Address, &Len);
+        int NewSock = accept(Fd, nullptr, nullptr);
         if (NewSock == SOCKET_ERROR)
         {
-            //printf("IOS Accept fail, errno=%d\n", errno);
-            perror("IOS Accept fail");
+            perror("IOS Accept Fail Error:");
         }
         else {
             std::printf("IOS Accept Success\n");
@@ -181,33 +179,5 @@ namespace SinaiEcho
         }
     }
 
-    bool SocketIOS::ShutDown()
-    {
-        int ret;
-        try {
-            ret = shutdown(FileDescriptor, 2);
-        }
-        catch(std::exception e)
-        {
-            printf("IOS shutdown exception=%s\n", e.what());
-        }
-        if(ret == SOCKET_ERROR)
-        {
-            //printf("IOS shut down errno=%d\n", errno);
-            perror("IOS shut down error");
-            return false;
-        } else
-        {
-            printf("IOS shut down success\n");
-            return true;
-        }
-    }
 
-    SCPPSocket *SocketIOS::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
-    {
-        SocketIOS* IOS = new SocketIOS(AddressFamily, Type, Protocol);
-        IOS->SetPeerAddress(NewPeerAddress);
-        IOS->SetFileDescriptor(NewSocket);
-        return IOS;
-    }
 }

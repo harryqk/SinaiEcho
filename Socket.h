@@ -74,16 +74,14 @@ namespace SinaiEcho
         virtual int Listen(int MaxConnect) = 0;
         //Address is server address
         virtual int Connect(sockaddr* Address) = 0;
-        //Address is return address of client
-        virtual SSocket Accept(sockaddr* Address) = 0;
         virtual int Accept(int Fd) = 0;
         virtual SockSSize_t Send(const char* Buf, SockSize_t Len, int Flag) = 0;
         virtual SockSSize_t Read(char* Buf, SockSize_t Len, int Flag) = 0;
-        SocketConnectionState GetConnectionState();
+
         virtual int SetNonBlockMode(bool NonBlock) = 0;
-        virtual Socket* Clone(SSocket NewSocket, sockaddr_in NewPeerAddress) = 0;
+
         virtual bool Close() = 0;
-        virtual bool ShutDown() = 0;
+
         virtual bool GetSocketError(int& err) = 0;
     protected:
         SSocket FileDescriptor;
@@ -99,27 +97,11 @@ namespace SinaiEcho
         sockaddr_in LocalAddress;
         sockaddr_in PeerAddress;
     public:
-        const sockaddr_in &GetLocalAddress() const;
-
-        void SetLocalAddress(const sockaddr_in &localAddress);
-
-        const sockaddr_in &GetPeerAddress() const;
-
-        void SetPeerAddress(const sockaddr_in &peerAddress);
 
 
     protected:
         SocketBlockMode BlockMode;
-    public:
-        SocketBlockMode GetBlockMode() const;
 
-
-    public:
-
-        void SetConnectionState(SocketConnectionState connectionState);
-
-    protected:
-        SocketConnectionState ConnectionState;
     };
 }
 

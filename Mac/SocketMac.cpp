@@ -78,20 +78,6 @@ namespace SinaiEcho
         return ret;
     }
 
-    SSocket SocketMac::Accept(sockaddr *Address)
-    {
-        SockLen_t Len = sizeof(struct  sockaddr);
-        SSocket NewSock = accept(FileDescriptor, Address, &Len);
-        if (NewSock == SOCKET_ERROR)
-        {
-            //printf("Mac Accept fail, errno=%d\n", errno);
-            perror("Mac Accept fail");
-        }
-        else {
-            std::printf("Mac Accept Success\n");
-        }
-        return NewSock;
-    }
 
     int SocketMac::Accept(int Fd)
     {
@@ -194,35 +180,7 @@ namespace SinaiEcho
         }
     }
 
-    bool SocketMac::ShutDown()
-    {
-        int ret;
-        try {
-            ret = shutdown(FileDescriptor, 2);
-        }
-        catch(std::exception e)
-        {
-            printf("mac shutdown exception=%s\n", e.what());
-        }
-        if(ret == SOCKET_ERROR)
-        {
-            //printf("mac shut down errno=%d\n", errno);
-            perror("Mac shut down error");
-            return false;
-        } else
-        {
-            printf("mac shut down success\n");
-            return true;
-        }
-    }
 
-    Socket *SocketMac::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
-    {
-        SocketMac* Mac = new SocketMac(AddressFamily, Type, Protocol);
-        Mac->SetPeerAddress(NewPeerAddress);
-        Mac->SetFileDescriptor(NewSocket);
-        return Mac;
-    }
 
     bool SocketMac::GetSocketError(int& err)
     {

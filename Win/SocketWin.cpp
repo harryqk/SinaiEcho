@@ -80,22 +80,7 @@ namespace SinaiEcho
         return ret;
     }
 
-    SSocket SocketWin::Accept(sockaddr *Address)
-    {
-        SockLen_t Len = sizeof(struct  sockaddr);
-        SSocket NewSock = accept(FileDescriptor, Address, &Len);
-        if (NewSock == SOCKET_ERROR)
-        {
-            printf("Win Accept fail, errno=%d\n", errno);
-            perror("Win Accept fail");
-            //WSACleanup();
-            return 0;
-        }
-        else {
-            std::printf("Win Accept Success\n");
-        }
-        return NewSock;
-    }
+
 
     int SocketWin::Accept(int Fd)
     {
@@ -192,35 +177,8 @@ namespace SinaiEcho
         }
     }
 
-    bool SocketWin::ShutDown()
-    {
-        int ret;
-        try {
-            ret = shutdown(FileDescriptor, 2);
-        }
-        catch(std::exception e)
-        {
-            printf("Win shutdown exception=%s\n", e.what());
-        }
-        if(ret == SOCKET_ERROR)
-        {
-            //printf("mac shut down errno=%d\n", errno);
-            perror("Win shut down error");
-            return false;
-        } else
-        {
-            printf("Win shut down success\n");
-            return true;
-        }
-    }
 
-    Socket *SocketWin::Clone(SSocket NewSocket, sockaddr_in NewPeerAddress)
-    {
-        SocketWin* Win = new SocketWin(AddressFamily, Type, Protocol);
-        Win->SetPeerAddress(NewPeerAddress);
-        Win->SetFileDescriptor(NewSocket);
-        return Win;
-    }
+
 
     bool SocketWin::GetSocketError(int& err)
     {
