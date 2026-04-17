@@ -68,8 +68,8 @@ namespace SinaiEcho
         int ret = connect(FileDescriptor, Address, sizeof(sockaddr));
         if (ret == SOCKET_ERROR)
         {
-            //std::printf("Mac Connect Error\n");
-            perror("Mac Connect Error");
+            std::printf("Mac Connecting\n");
+            //perror("Mac Connect Error");
             //close(FileDescriptor);
         }
         else {

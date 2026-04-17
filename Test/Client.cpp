@@ -61,9 +61,9 @@ int main()
         //if (i % 30 == 0) sleep(1000);
         TCPClient Client(&loop);
         //win
-        Client.Connect("192.168.0.105",8888);
+        //Client.Connect("192.168.0.105",8888);
         //mac
-        //Client.Connect("192.168.0.103",8888);
+        Client.Connect("192.168.0.103",8888);
         //linux
         //Client.Connect("192.168.0.105",8888);
     }

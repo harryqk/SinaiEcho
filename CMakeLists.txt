@@ -47,18 +47,13 @@ if(ANDROID)
 elseif(IOS)
 elseif (MACOS)
     aux_source_directory(./Mac DIR_SRCS2)
-    add_library(SocketMac ${DIR_SRCS1} ${DIR_SRCS2} EventLoop.cpp EventLoop.h NetConnection.cpp NetConnection.h TCPServer.cpp TCPServer.h TCPClient.cpp TCPClient.h NetMessage.cpp NetMessage.h
-            NetSystem.cpp
-            NetSystem.h)
-    add_library(Poller Poller/Poller.h Poller/Poller.cpp Poller/KqueuePoller.h Poller/KqueuePoller.cpp)
-    add_library(Wakeup Wakeup/Wakeup.cpp Wakeup/Wakeup.h Wakeup/PipeWakeup.cpp Wakeup/PipeWakeup.h)
+    add_library(SocketMac ${DIR_SRCS1} ${DIR_SRCS2} EventLoop.cpp  NetConnection.cpp  TCPServer.cpp  TCPClient.cpp NetMessage.cpp
+            NetSystem.cpp)
+    add_library(Poller  Poller/Poller.cpp Poller/KqueuePoller.cpp)
+    add_library(Wakeup Wakeup/Wakeup.cpp  Wakeup/PipeWakeup.cpp )
     add_executable(Server Test/Main.cpp )
     target_link_libraries(Server SocketMac Poller Wakeup)
-    add_executable(Client Test/Client.cpp
-            Poller/SelectPoller.cpp
-            Poller/SelectPoller.h
-            Wakeup/SocketWakeup.cpp
-            Wakeup/SocketWakeup.h)
+    add_executable(Client Test/Client.cpp)
     target_link_libraries(Client SocketMac Poller Wakeup)
 elseif (WINDOWS)
  aux_source_directory(./Win DIR_SRCS2)
