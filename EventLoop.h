@@ -41,7 +41,7 @@ namespace SinaiEcho
         Poller* poller;
         std::vector<Channel*> ActiveChannels;
 
-        std::queue<std::function<void()>> PendingFunctors;
+        std::queue<std::function<void()>> PendingTasks;
         std::mutex Mutex;
 
         Wakeup* wakeup;

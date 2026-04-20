@@ -67,16 +67,16 @@ namespace SinaiEcho
             }
 
             // 执行任务
-            std::queue<std::function<void()>> functors;
+            std::queue<std::function<void()>> tasks;
             {
                 std::lock_guard<std::mutex> lock(Mutex);
-                std::swap(functors, PendingFunctors);
+                std::swap(tasks, PendingTasks);
             }
 
-            while (!functors.empty())
+            while (!tasks.empty())
             {
-                functors.front()();
-                functors.pop();
+                tasks.front()();
+                tasks.pop();
             }
         }
     }
@@ -90,7 +90,7 @@ namespace SinaiEcho
     {
         {
             std::lock_guard<std::mutex> lock(Mutex);
-            PendingFunctors.push(cb);
+            PendingTasks.push(cb);
         }
 
         wakeup->Wake();
